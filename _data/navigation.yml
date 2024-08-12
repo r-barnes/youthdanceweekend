@@ -2,10 +2,6 @@
   url: "/"
   side: left
 
-- title: Getting Started
-  url: "/getting-started/"
-  side: left
-
 - title: "Templates"
   url: "/design/"
   side: left
@@ -50,25 +46,12 @@
   - title: "No Header but Image"
     url: "/design/no-header-but-image/"
 
-- title: Documentation
-  url: "/documentation/"
-  side: left
-  dropdown:
-  - title: "Changelog"
-    url: "/changelog/"
-  - title: "Roadmap"
-    url: "/roadmap/"
-
 - title: Blog
   url: "/blog/"
   side: left
   dropdown:
   - title: "Blog Archive"
     url: "/blog/archive/"
-
-- title: "Search"
-  url: "/search/"
-  side: right
 
 - title: "Contact"
   url: "/contact/"
