@@ -54,7 +54,8 @@ homepage: true
 
 # About YDW
 
-Registration for YDW 2023 is now open! September 29th to October 1st – Fill out the form here!
+Registration for YDW 2024 is now open! September 6-8!
+
 YDW is an awesome youth-focused traditional dance and music gathering in rural Vermont featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far. Our goal is to help and inspire the next generation from across North America to connect with each other and develop skills for participating and leading in all aspects of our vibrant dance community.
 
 The weekend is open to anyone 18 or older, and is designed to be affordable and accessible, especially to younger dancers. You can read more about the history and mission of YDW, or meet our organizing committee.

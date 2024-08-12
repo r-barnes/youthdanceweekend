@@ -15,4 +15,8 @@ phlow: # replace this with your info
 rbarnes:
   name: "Richard Barnes"
   siterole: "webmaster, developer"
+
+ydw:
+  name: "YDW Committee"
+  siterole: "webmaster"
 # you can add more authors here

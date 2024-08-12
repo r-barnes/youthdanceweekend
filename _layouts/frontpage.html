@@ -53,15 +53,35 @@ format: frontpage
 
 {% comment %}
 *
+* If there is content, spit it out.
+*
+{% endcomment %}
+
+<div class="row">
+    {{ content }}
+</div><!-- /.row -->
+
+<hr>
+
+{% unless site.categories.events == empty %}
+{% for post in site.categories.events limit:1 %}
+<h1>{{ post.title }}</h1>
+{{ post.content }}
+{% endfor %}
+{% endunless %}
+
+{% comment %}
+*
 * First check, if there are any posts at all
 *
 {% endcomment %}
 
 {% comment %}
-{% unless site.posts == empty %}
+
+{% unless site.categories.events == empty %}
     <div class="row t30 b20 homepage">
         <div class="small-12 columns">
-            {% for post in site.posts limit:1 %}
+            {% for post in site.categories.events limit:1 %}
             {% if post.image.homepage %}
             <p>
                 <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape_once }}"><img width="970" src="{{ site.urlimg }}{{ post.image.homepage }}" alt="{{ page.title | escape_once }}"></a>
@@ -82,7 +102,7 @@ format: frontpage
 
     <div class="row">
         <div class="medium-6 columns">
-            {% for post in site.posts limit:1 %}
+            {% for post in site.categories.events  limit:1 %}
             {% if post.subheadline %}<p class="subheadline">{{ post.subheadline }}</p>{% endif %}
             <h2><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
             <p>
@@ -99,15 +119,5 @@ format: frontpage
         </div><!-- /.medium-7.columns -->
     </div><!-- /.row -->
 {% endunless %}
+
 {% endcomment %}
-
-
-{% comment %}
-*
-* Finally, if there is content, spit it out.
-*
-{% endcomment %}
-
-<div class="row">
-    {{ content }}
-</div><!-- /.row -->
