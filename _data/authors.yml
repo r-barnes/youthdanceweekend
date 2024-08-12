@@ -11,4 +11,8 @@ phlow: # replace this with your info
   uri: http://phlow.de/
   email:
   twitter: "@phlow"
+
+rbarnes:
+  name: "Richard Barnes"
+  siterole: "webmaster, developer"
 # you can add more authors here

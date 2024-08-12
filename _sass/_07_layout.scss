@@ -89,6 +89,31 @@ body.video cite { color: #fff; }
     margin-top: 60px;
 }
 
+div.ydw {
+    color:white;
+    text-align:center;
+    font-size: calc(5vw);
+    margin-top: calc(15vh);
+}
+
+#grass {
+    background-image:url('http://localhost:4000/images/ydw/grass.png');
+    background-position-x: 0%;
+    background-position-y: bottom;
+    background-repeat:repeat-x;
+    background-size:auto 200px;
+    height:700px;
+    position:relative;
+}
+
+#tree {
+    right: 5%;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    height: 700px;
+}
+
 /* Masthead › small-only
 ------------------------------------------------------------------- */
 
