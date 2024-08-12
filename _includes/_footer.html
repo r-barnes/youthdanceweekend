@@ -17,11 +17,12 @@
 
             <p class="shadow-black">
               {{ site.description }}
-              <a href="{{ site.url }}{{ site.baseurl }}/info/">{{ site.data.language.more }}</a>
+              <a href="{{ site.url }}{{ site.baseurl }}/">{{ site.data.language.more }}</a>
             </p>
           </div><!-- /.large-6.columns -->
 
 
+          {% comment %}
           <div class="small-6 medium-3 large-3 large-offset-1 columns">
             {% for service_item in site.data.services %}
               {% if forloop.first == true %}
@@ -38,8 +39,10 @@
               {% endfor %}
               </ul>
           </div><!-- /.large-4.columns -->
+          {% endcomment %}
 
 
+          {% comment %}
           <div class="small-6 medium-3 large-3 columns">
             {% for network_item in site.data.network %}
               {% if forloop.first == true %}
@@ -56,6 +59,7 @@
             {% endfor %}
             </ul>
           </div><!-- /.large-3.columns -->
+          {% endcomment %}
         </div><!-- /.row -->
 
       </div><!-- /#footer -->
