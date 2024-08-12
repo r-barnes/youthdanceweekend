@@ -33,7 +33,7 @@ header:
 # To change colors see sass/_01_settings_colors.scss
 #
 callforaction:
-  url: #
+  url: https://docs.google.com/forms/d/e/1FAIpQLSfP6ImG3CAUuacbz_fcyi0OgQ-Wa-gfa0ssjKzNmISE8qyA9A/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR16eYeWgBOCJVfeSFHnralIljRiK4yd5jls9Dy9Vn-bi2qdk6nJBSeKHYg_aem_Ab1R1tnVvAdvIV1DgIc7x0xuTG1zgznU9vlyvrlGPavi2F7aaLXXBUpmqlClViugFajEWCmCItnMVmTm5hM0GAIb
   text: Register here
   style: alert
 permalink: /index.html
