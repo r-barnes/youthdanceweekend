@@ -59,16 +59,16 @@ format: frontpage
 
 <div class="row">
     {{ content }}
+
+    <hr>
+
+    {% unless site.categories.events == empty %}
+    {% for post in site.categories.events limit:1 %}
+    <h1>{{ post.title }}</h1>
+    {{ post.content }}
+    {% endfor %}
+    {% endunless %}
 </div><!-- /.row -->
-
-<hr>
-
-{% unless site.categories.events == empty %}
-{% for post in site.categories.events limit:1 %}
-<h1>{{ post.title }}</h1>
-{{ post.content }}
-{% endfor %}
-{% endunless %}
 
 {% comment %}
 *
