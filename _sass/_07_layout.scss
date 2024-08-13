@@ -108,6 +108,10 @@ div.ydw {
 
 #tree {
     right: 5%;
+    @media #{$small-only} {
+        right: 0;
+        object-fit: cover;
+    }
     display: block;
     bottom: 0;
     position: absolute;
@@ -389,6 +393,6 @@ div.ydw {
 
 
 /* Richard's funky overrides */
-div.row {
+.row {
     padding: 0 10px;
 }
