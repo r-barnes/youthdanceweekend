@@ -108,14 +108,32 @@ div.ydw {
 
 #tree {
     right: 5%;
-    @media #{$small-only} {
-        right: 0;
-        object-fit: cover;
-    }
     display: block;
     bottom: 0;
     position: absolute;
     height: 700px;
+}
+
+
+@media #{$small-only} {
+#grass {
+    background-image:url('/images/ydw/grass.png');
+    background-position-x: 0%;
+    background-position-y: bottom;
+    background-repeat:repeat-x;
+    background-size:auto 50px;
+    height:300px;
+    position:relative;
+}
+
+#tree {
+    right: 0;
+    object-fit: contain;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    height: unset;
+}
 }
 
 /* Masthead › small-only
