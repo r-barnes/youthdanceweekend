@@ -82,3 +82,9 @@ We haven’t thought of everyone, so keep the ideas coming. And rest assured tha
 
 ### Q: How can I get hired at YDW?
 A: Let us know you’d like to be hired or that you’d like us to keep an eye on you for the future! We encourage you to get in touch, whether you are saying “I think I’m ready to be hired at YDW!” or “What do I need to do to be ready to be hired for YDW?”
+
+### Q: What's the refund policy?
+
+Please contact us at register4ydw@gmail.com if you would like a refund.
+
+If it is more than a month until the start date, you can get a full refund. If it's less then a month, we offer a half refund. If it is under a week until the event, a quarter refund, and if 2 days out or less, we do not offer a refund.
