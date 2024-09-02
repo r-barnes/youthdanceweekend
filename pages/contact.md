@@ -9,4 +9,4 @@ header:
    image_fullwidth: "ydw/cropped-YDW2022DSC04384-scaled-1.jpg"
 ---
 
-To contact the YDW committee email TODO.
+To contact the YDW committee email register4ydw@gmail.com
