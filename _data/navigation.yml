@@ -6,9 +6,14 @@
   url: "/events/"
   side: left
 
+- title: Policies
+  url: "/policies/"
+  side: left
+
 - title: "FAQ"
   url: "/faq/"
   side: left
+
 
 # - title: "Header Styles"
 #   url: "/headers/"
