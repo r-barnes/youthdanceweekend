@@ -22,6 +22,55 @@ COVID/Illness Protocols and General Waiver for Youth Dance Weekend:
 
 There will be two rapid testing required, one in advance of and one during the weekend. Our masking policy will be determined closer to the event date, and will be based on COVID-19 rates at that time. The state of respiratory illnesses is fluid, and policies may change per federal, state, or local authorities and guidance, as well as YDW weekend needs.
 
+## Code of Conduct
+
+YDW aspires to be a comfortable space for everyone, regardless of age, gender identity and expression, sexual orientation, (dis)ability, physical appearance, race, religion/spirituality, or other aspects of identity. We do not tolerate harassment in any form. Our goal is to create a space where everyone can grow as dancers and leaders and where everyone can enjoy dancing and socializing safely. To make this happen we all need to agree to a few expectations:
+
+* Refrain from racist, homophobic, transphobic, ableist, sexist, or other behavior that degrades, shames, or disrespects others for any aspect of their identity.
+* Be conscious of the need for consent for certain activities. Make sure you have consent before dancing with someone, dipping them, cuddling with them, making any form of sexual contact, taking their photograph, recording them, et cetera.
+* Event-specific guidelines:
+    * YDW is an alcohol- and drug-free event. Please do not bring those here.
+    * Everyone has the option to opt out of being photographed or recorded. If you would like to opt out, please touch base with a committee member.
+
+If asked to stop any behavior, participants are expected to comply immediately. We expect participants to follow these rules throughout the weekend. Violations of the code of conduct will be subject to the YELLOW/ORANGE/RED action plan detailed below.
+
+YDW encourages you to take initiative in respecting, setting, discussing, and defending boundaries. Folk dancing involves close physical proximity, hand-holding, and other forms of physical contact, which are not present in many other activities. As such, obtaining consent and making concerted efforts to communicate clearly are particularly important. Members of our community have different tolerances for physical contact, direct social interaction, and the physical environment around them. We also have differing physical, emotional, and social abilities and sensitivities. Please do not make assumptions about the type of connection you have with someone else; when seeking clarity, use clear verbal communication and ask for help if you need it!
+
+_**What to do if you feel uncomfortable or unsafe:**_
+
+Please talk to a committee member or additional safety rep (to be designated at first night announcements). We take all complaints seriously and are committed to resolving issues to the greatest extent possible, and it is our responsibility to be present to help participants feel safe throughout the weekend. Please review the categories below - these help us identify the priority and severity of the complaint, and which actions will be taken accordingly.
+
+_**Our Action Plan for Code of Conduct Violations**_
+
+What happens if you violate the code of conduct? The committee will address your situation in accordance with our tiered response plan below:
+
+Yellow
+This category means we’ve received a complaint that you have made someone uncomfortable. One of the Committee members will have a conversation with you to let you know that a complaint has been made and give you an opportunity to discuss it with the Committee. It’s expected that you will be open to a conversation with the organizers. Repeated offenses at this level or intentionally ignoring feedback will lead to escalation within the instant action plan.
+
+Orange
+This category means we have received an official report that you have caused harm to another person. The committee will undertake observation on a discretionary basis, in cooperation with you. This category is intended to allow room for people to prove they are willing to improve and grow. If you demonstrate that you are not willing to improve your behavior we reserve the right to remove you from the event or ban you from future events.
+
+Red
+This category means you are banned from Youth Dance Weekend (the current one and the year to follow). You may request to have your ban lifted after the full calendar year has passed. Sexual assault and rape both land a person immediately in the red category.
+
+_**How to report if someone crossed your boundaries or violated the code of conduct**_
+
+If you have concerns about a member of the community, please bring your concerns to an organizer directly or leave a comment in the suggestion box (can be anonymous if you prefer). You don't have to have a fully formed request or plan when you initiate the conversation.
+
+When taking a harassment report in person, our team will do our best to ensure you are safe and cannot be overheard. We may involve other members of our organizing team to ensure your report is managed properly. Once safe, we'll ask you to tell us about what happened. This can be upsetting, but we'll handle it as respectfully as possible, and you can bring someone to support you. You will never be asked to confront anyone directly, and we won't tell anyone who you are without your explicit consent; we will discuss with you before taking action. Our team will be happy to help you contact local support services as you may request. 
+
+Any attendee is encouraged to bring any problem to any organizer at any time. When the attendee does this, they agree to the following actions:
+
+* Organizers will be informed of anonymized information that is given to any organizer regarding a complaint. 
+    * If a complaint involves one of the organizers, that organizer will be treated as an attendee for conflict-resolution purposes.
+    * If the complaint involves a minor, the minor's present caregiver will be given information as well.
+* The organizers will attempt to resolve all complaints, but do not promise specific outcomes. The organizers promise to act with integrity according to their personal values and our community's shared values to the best of their judgment.
+* The organizers may utilize the instant action plan, and outcomes include:
+    * removing anyone from the event.
+    * removing anyone from the dance area.
+    * restricting an individual's access to specific spaces at the event, resources, or behaviors; or
+    * involving a third-party mediator.
+* In cases where suspensions and bans need to be enforced, YDW may make a request of the reporter to document their experiences in writing.
 
 ## Anti-racism Statement
 
