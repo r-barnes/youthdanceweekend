@@ -4,7 +4,7 @@
 # inserted automagically in the webpage. To make
 # this work, you have to use › layout: frontpage
 #
-layout: frontpage
+layout: page-fullwidth
 header:
   image_fullwidth: ydw/cropped-YDW2022DSC04384-scaled-1.jpg
 # widget1:
@@ -32,26 +32,26 @@ header:
 # to use the main color or success, alert or secondary.
 # To change colors see sass/_01_settings_colors.scss
 #
-callforaction:
-  url: https://docs.google.com/forms/d/e/1FAIpQLSfP6ImG3CAUuacbz_fcyi0OgQ-Wa-gfa0ssjKzNmISE8qyA9A/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR16eYeWgBOCJVfeSFHnralIljRiK4yd5jls9Dy9Vn-bi2qdk6nJBSeKHYg_aem_Ab1R1tnVvAdvIV1DgIc7x0xuTG1zgznU9vlyvrlGPavi2F7aaLXXBUpmqlClViugFajEWCmCItnMVmTm5hM0GAIb
-  text: Register here
-  style: alert
+# TODO: Uncomment once registration is open and add a new link
+# callforaction:
+#   url: https://docs.google.com/forms/d/e/1FAIpQLSfP6ImG3CAUuacbz_fcyi0OgQ-Wa-gfa0ssjKzNmISE8qyA9A/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR16eYeWgBOCJVfeSFHnralIljRiK4yd5jls9Dy9Vn-bi2qdk6nJBSeKHYg_aem_Ab1R1tnVvAdvIV1DgIc7x0xuTG1zgznU9vlyvrlGPavi2F7aaLXXBUpmqlClViugFajEWCmCItnMVmTm5hM0GAIb
+#   text: Register here
+#   style: alert
 permalink: /index.html
 #
 # This is a nasty hack to make the navigation highlight
 # this page as active in the topbar navigation
 #
 homepage: true
+title: Save the date Stepember 26-28th, 2025!
+teaser: "It will be at our new location <strong>Hulburt Outdoor Center in Fairlee, VT.</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkinds</em></strong><br><em>Registration will open May 18<em>"
 ---
 
-# About YDW
 
-Registration for YDW 2024 is now open! September 6-8!
+### About YDW
 
 YDW is an awesome youth-focused traditional dance and music gathering in rural Vermont featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far. Our goal is to help and inspire the next generation from across North America to connect with each other and develop skills for participating and leading in all aspects of our vibrant dance community.
 
 The weekend is open to anyone 18 or older, and is designed to be affordable and accessible, especially to younger dancers. You can read more about the history and mission of YDW, or meet our organizing committee.
-
-For future updates, check the links below.
 
 Questions about YDW? Visit the FAQ or contact the organizers.
