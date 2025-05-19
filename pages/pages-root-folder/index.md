@@ -44,7 +44,7 @@ permalink: /index.html
 #
 homepage: true
 title: Save the date Stepember 26-28th, 2025!
-teaser: "It will be at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkinds</em></strong><br><em>Registration will open May 18</em>"
+teaser: "It will be at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkins</em></strong><br><em>Registration will open May 18</em>"
 ---
 
 
