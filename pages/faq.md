@@ -3,7 +3,6 @@ layout              : page
 show_meta           : false
 title               : "FAQ"
 subheadline         : "Frequently Asked Questions"
-# teaser              : "This step-by-step guide helps you to customize Feeling Responsive to your needs."
 header:
    image_fullwidth: "ydw/cropped-YDW2022DSC04384-scaled-1.jpg"
 permalink           : "/faq/"
@@ -12,74 +11,61 @@ permalink           : "/faq/"
 Here are a few answers to common questions about YDW. Have additional questions? Contact us…
 
 ### Q: Is YDW just a fun excuse for young people to dance together?
-A: YDW is very fun and younger people comprise the majority of attendees. But, as you can read in our mission, YDW is more than that. We at YDW believe each individual has a role in shaping our community. To that end, YDW is a place for making connections and building the next generation of leaders, whether they be dancers, organizers, musicians, callers, or sound people.
+A: YDW is very fun and younger people comprise the majority of attendees. But YDW is more than that. We at YDW believe each individual has a role in shaping our community. To that end, YDW is a place for making connections and building the next generation of leaders, whether they be dancers, organizers, musicians, callers, or sound people.
 
 ### Q: What happens at YDW?
-A: The YDW schedule features lots of dancing — contra, English, and more — as well as opportunity to play, call, and develop community-building skills. Experimentation and discussion sessions are also at the heart of what we do. To emphasize how central these sessions are, the first YDW called this the Bread & Butter session.
-
-Large-scale conversations about dance community will always be a part of what we do, though the format of how we achieve this may change from year to year. We are interested in finding a variety of ways to fulfill this goal. We’d love to hear more ideas about how we can effectively incorporate this goal into sessions that you would enjoy.
+A: The YDW schedule features lots of dancing — contra, English, and more — as well as opportunities to play, call, and develop community-building skills. Experimentation and large-scale discussion sessions are also at the heart of what we do. We’d love to hear more ideas about how we can effectively incorporate these goals into sessions that you would enjoy.
 
 ### Q: How does registration work?
-A: There is a lot of interest in attending YDW and (unfortunately) we can’t accommodate everyone every year. So understanding how registration works is important!
-
-We have an initial sign up period.
-Assuming we have more people signed up than can fit, then we have a lottery to assign spaces.
-Everyone else is placed on the waitlist, as is anyone who signs up after the lottery.
-To make sure you have the best chance at attending YDW, please make sure to join the mailing list and/or mark your calendar for the initial sign up. If you have questions, don’t hesitate to contact us.
+A: There is a lot of interest in attending YDW and unfortunately we can’t accommodate everyone every year. Here’s how registration works for us:
+- We have an initial sign up period that usually opens in May and closes in June. 
+- Since typically more people sign up than we can accommodate, we hold a lottery to assign spots. The lottery is randomly generated, although we do weight slightly in favor of folks under age 25 and folks who have never attended YDW, to ensure the longevity of our organization. 
+- Everyone who doesn’t get admitted via the lottery is placed on a waitlist, as does anyone who signed up late after the sign-up period was closed. To make sure you have the best chance at attending YDW, make sure to sign up during the sign-up period, and if you are on the waitlist keep monitoring your email closely for a message that you have been offered a spot. If you have questions, don’t hesitate to contact us.
 
 ### Q: I’m significantly over 35; can I come to the dance weekend?
-A: Yes! Our event targets participants under 35 but is open to anyone over 18. Our focus on youth is not meant to be exclusionary, but we want to ensure that there is space available for younger dancers to attend so that they can benefit from our programming. That said, we often have attendees in their 50s, 60s, and beyond and they are most welcome.
-
-If you are interested in being a part of the event and are over 35, we encourage you to choose a payment option that will help cover a young person’s admission. Or, consider bringing a younger member of your dance community along with you.
-
-### Q: I am the parent of a small child. Can I bring them?
-Yes! Parents of small children, if you are interested in attending YDW and would like to attend and bring your child, please contact us.
+A: Yes! Our event targets participants under 35 but is open to anyone over 18. Our focus on youth is not meant to be exclusionary, but we want to ensure that there is space available for younger dancers to attend so that they can benefit from our programming. If you are interested in being a part of the event and are over 35, we encourage you to choose a payment option that will help cover a young person’s admission. 
 
 ### Q: Why can’t my 17-year-old friend come to this event?
 A: We generally don’t allow underage participants because of liability. YDW gets better every year anyhow, so bring them next time.
 
+### Q: I am the parent of a small child. Can I bring them?
+Yes! Parents and legal guardians of small children, if you are interested in attending YDW and are willing to supervise your child throughout the weekend, you can bring them along. Please contact us to let us know. 
+
 ### Q: How much does it cost to attend YDW?
-A: In 2011, we abandoned a sliding scale based on age and switched to “pay what you can” pricing. Read more about it here.
+A: YDW uses a sliding scale to help make the registration fee accessible for young dancers. The at-cost price is $185. Paying the at-cost price helps us break even for the weekend. The minimum price available for low-income folks is $115. If you’re feeling generous, consider paying $255 which helps cover the cost of one person who will be paying the low-income rate. You can also consider becoming a YDW sustainer ($375) or benefactor ($450).
 
 ### Q: Can I get a scholarship to come to YDW, or a discount in exchange for volunteer work?
-A: Well, not really. YDW is designed to be affordable from the ground up. We endeavor to put on a great weekend while keeping the cost of attending low compared to similar events. Our pay-as-you-can pricing system allows those in need to pay less than at-cost, supported by the other attendees themselves.
 
-We also ask everyone to do an hour of volunteering during the weekend – sweeping floors, chopping veggies, cleanup, setup, etc. This is a great way to meet folks, learn about the nitty-gritty of running a dance weekend, and contribute to the overall success of the event. There are a few extra time-consuming jobs where we offer supervolunteers a reduced minimum. If you are interested in helping out extra, let us know (but no guarantees!).
-
-We also offer a limited number of travel grants to help defray the travel costs for people coming a really long way to attend YDW, supported in part by our t-shirt sales.
+A: Not really. YDW is designed to be affordable from the ground up. We endeavor to put on a great weekend while keeping the cost of attending low compared to similar events. Our pay-as-you-can pricing system allows those in need to pay less than at-cost, supported by the other attendees themselves. However, there a few extra time-consuming or specialized “supervolunteer” positions that allow people to help us out with things like dishwashing, first aid, or sound engineering in exchange for a reduced registration fee. If you are interested in a supervolunteer position, there will be an opportunity to let us know on the sign-up form.
 
 If the cost is still prohibitive for you, we suggest asking your local dance group to sponsor you or contribute towards your travel costs. If you’ve got disposable income to spare, we encourage you to sponsor someone else or pay more than the basic rate to help someone else attend.
 
 ### Q: Where is YDW?
-A: We are presently located at Kinhaven Music School in Weston, VT. We chose Kinhaven because we wanted a feeling of community over the course of the whole weekend – not just when we’re dancing. It’s gorgeous, relaxing, and has an orchard full of delicious apples. (Are you sold yet?)
+YDW 2025 will be held at Hulbert Outdoor Center, 2899 Lake Morey Rd, Fairlee, VT 05045. 
+From 2008–2010 YDW was held at Farm & Wilderness in Plymouth, VT. From 2011-2024, YDW was held at Kinhaven Music School in Weston, VT. 
 
-### Q: What is Kinhaven like? How do I prepare?
-A: Temperature and Housing. Kinhaven is a summer camp not designed for winter. There are four-walled cabins but they are not heated or insulated. Many people also choose to tent. But whatever you do, remember: It’s cold in Vermont in September. Bring warm clothes and warm sleeping arrangements!
+### Q: What is Hulbert Outdoor Center like? How do I prepare?
+- Housing: Hulbert offers both wood cabins and canvas cabins. 
+    - The wood cabins are winterized and have electricity, and each one contains 4 rooms and 2 bathrooms, each room contains 4 twin beds. 
+    - The canvas cabins are large four-sided tent structures set up on wooden platforms, and each one contains 2-4 twin-sized cots. The canvas cabins are not winterized and do not have electricity. There are bath-houses located close by the canvas cabins.
+    - You may also choose to bring your own tent and camp.
+    - For all housing options, campers must provide their own bedlinens. Please remember that it gets cold in Vermont in September. Bring warm clothes and bedding!
 
-Dance floor. It’s a beautiful wood floor. The amazing Dance Ranger Stan Fowler keeps it in good shape for us. Give him a hug if you see him at a dance event.
-
-Food. The food is made by us. It’s is sourced as locally as possible. And, if we say so, it is delish! We can accommodate the vegan, gluten-free, and just about any diet you throw at us — especially if you let us know beforehand.
+- Dance Hall - we will dance in Hulbert’s historic barn, which features a finished hardwood floor, a stage, and balcony.
+- Accessibility: the dining hall, dance hall, and some of the cabins are all located a short distance from one another, and have ramps. Please contact us if you have specific accessibility questions or concerns. 
+- Meals are served buffet-style in the dining hall, where there will be indoor and outdoor seating options. We can accommodate dietary restrictions if you let us know beforehand. 
 
 ### Q: So, wait, is it cold?
-A: Yes! It is cold, especially at night. Prepare for near-freezing temperatures. Have warm clothes and especially warm bedding. We’re not kidding.
+A: Yes! It is cold in Vermont in the fall, especially at night. Prepare for near-freezing temperatures. Have warm clothes and especially warm bedding. We’re not kidding. 
 
 ### Q: How do I get to YDW?
 A: Transportation is an important issue for many. To help with this, we have a Rides Coordinator to put people in touch for carpooling and other transportation needs. Please feel free to get in touch with us if you have transportation concerns.
 
 ### Q: What if I am flying?
-A: We’re excited you’re going to make the trip to attend YDW!
-
-The nearest airports are Hartford/Springfield (~2.5 hours), Burlington, VT (~2 hours), Manchester, NH (~2 hours), and Boston (~3 hours). We want to do everything we can to help make the travel logistics manageable. Our ride coordinator can help you find a ride between one of these airports and the weekend. The best options for rides will probably be from Boston, Burlington, and Hartford (in that order).
-
-Don’t forget we offer a limited number of travel grants to help defray the travel costs for people coming a really long way to attend YDW, supported in part by our t-shirt sales.
+A: We’re excited you’re going to make the trip to attend YDW! The nearest airports are Hartford/Springfield, Burlington, VT, Manchester, NH, and Boston. We want to do everything we can to help make the travel logistics manageable. Our ride coordinator can help you find a ride between one of these airports and the weekend. 
 
 ### Q: Have you considered hiring X band or caller?
-A: We love hearing suggestions for musicians and callers!
-
-Who do we hire? Although we don’t exclusively hire “younger” performers, part of the goal of YDW is to highlight talented younger performers and instructors by hiring them to be on staff. Some of them are already nationally known, while others are just beginning to work outside of their local community.
-
-We haven’t thought of everyone, so keep the ideas coming. And rest assured that even if you’ve never heard of some of our staff, we’re positive that you’re going to have a blast dancing to and hanging out with them at the weekend.
+A: We love hearing suggestions for musicians and callers! Who do we hire? Although we don’t exclusively hire “younger” performers, part of the goal of YDW is to highlight talented younger performers and instructors by hiring them to be on staff. We haven’t thought of everyone, so keep the ideas coming. 
 
 ### Q: How can I get hired at YDW?
 A: Let us know you’d like to be hired or that you’d like us to keep an eye on you for the future! We encourage you to get in touch, whether you are saying “I think I’m ready to be hired at YDW!” or “What do I need to do to be ready to be hired for YDW?”
-
