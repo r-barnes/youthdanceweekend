@@ -19,6 +19,25 @@ format: page-fullwidth
 <div class="row t30">
 	<div class="medium-12 columns">
 		<article>
+			{% comment %}
+			*
+			* Check if there's a call for action button.
+			* This is ripped from the frontpage.html
+			*
+			{% endcomment %}
+			{% if page.callforaction.url contains 'http' %}
+			{% assign url = '' %}
+			{% else %}
+			{% capture url %}{{ site.url }}{{ site.baseurl }}{% endcapture %}
+			{% endif %}
+			{% if page.callforaction %}
+				<div class="row">
+					<div class="small-12 text-center columns">
+						<a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
+					</div><!-- /.small-12.columns -->
+				</div><!-- /.row -->
+			{% endif %}
+
 			<header>
 				{% if page.subheadline %}<p class="subheadline">{{ page.subheadline }}</p>{% endif %}
 				<h1>{{ page.title }}</h1>

@@ -33,20 +33,19 @@ header:
 # To change colors see sass/_01_settings_colors.scss
 #
 # TODO: Uncomment once registration is open and add a new link
-# callforaction:
-#   url: https://docs.google.com/forms/d/e/1FAIpQLSfP6ImG3CAUuacbz_fcyi0OgQ-Wa-gfa0ssjKzNmISE8qyA9A/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR16eYeWgBOCJVfeSFHnralIljRiK4yd5jls9Dy9Vn-bi2qdk6nJBSeKHYg_aem_Ab1R1tnVvAdvIV1DgIc7x0xuTG1zgznU9vlyvrlGPavi2F7aaLXXBUpmqlClViugFajEWCmCItnMVmTm5hM0GAIb
-#   text: Register here
-#   style: alert
+callforaction:
+  url: https://docs.google.com/forms/d/e/1FAIpQLSeHyxix85ijfrNTxvm-YmUQkxpPSjYU6CzMw4rH7mSpXjcQUQ/viewform
+  text: Register here
+  style: alert
 permalink: /index.html
 #
 # This is a nasty hack to make the navigation highlight
 # this page as active in the topbar navigation
 #
 homepage: true
-title: Save the date Stepember 26-28th, 2025!
-teaser: "It will be at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkins</em></strong><br><em>Registration will open May 18</em>"
+title: Registration is open for 2025!
+teaser: "It will take place <strong>September 26-28th, 2025</strong>, at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkins</em></strong><br>"
 ---
-
 
 ### About YDW
 
