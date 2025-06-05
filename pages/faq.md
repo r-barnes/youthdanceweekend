@@ -32,7 +32,14 @@ A: We generally don’t allow underage participants because of liability. YDW ge
 Yes! Parents and legal guardians of small children, if you are interested in attending YDW and are willing to supervise your child throughout the weekend, you can bring them along. Please contact us to let us know. 
 
 ### Q: How much does it cost to attend YDW?
-A: YDW uses a sliding scale to help make the registration fee accessible for young dancers. The at-cost price is $185. Paying the at-cost price helps us break even for the weekend. The minimum price available for low-income folks is $115. If you’re feeling generous, consider paying $255 which helps cover the cost of one person who will be paying the low-income rate. You can also consider becoming a YDW sustainer ($375) or benefactor ($450).
+A: YDW uses a sliding scale to help make the registration fee accessible for young dancers. Here were our prices in 2025:
+
+- The at-cost price was $185. Paying the at-cost price helps us break even for the weekend. 
+- The minimum price available for low-income folks was $115. 
+- Some generous folks paid $255, which helped cover the cost of one person who paid the low-income rate.
+- There were also tiers for YDW sustainers ($375) and benefactors ($450).
+
+With our change in venue, prices may fluctuate slightly, and this year we will also be pro-rating based on housing choice. More details to come.
 
 ### Q: Can I get a scholarship to come to YDW, or a discount in exchange for volunteer work?
 
