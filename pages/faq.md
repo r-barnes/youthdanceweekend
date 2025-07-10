@@ -32,7 +32,7 @@ A: We generally don’t allow underage participants because of liability. YDW ge
 Yes! Parents and legal guardians of small children, if you are interested in attending YDW and are willing to supervise your child throughout the weekend, you can bring them along. Please contact us to let us know. 
 
 ### Q: How much does it cost to attend YDW?
-A: YDW uses a sliding scale to help make the registration fee accessible for young dancers. Here were our prices in 2025:
+A: YDW uses a sliding scale to help make the registration fee accessible for young dancers. Here were our prices in 2024:
 
 - The at-cost price was $185. Paying the at-cost price helps us break even for the weekend. 
 - The minimum price available for low-income folks was $115. 
