@@ -9,7 +9,7 @@ bundle config path ~/.bundle-stuff
 
 Local development:
 ```
-bundle exec jekyll serve --config _config.yml,_config_dev.yml
+bundle exec jekyll serve --config _config.yml,_config_dev.yml --port 4001
 ```
 
 Structure:
