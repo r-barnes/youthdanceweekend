@@ -1,4 +1,6 @@
-# Getting started
+# Youth Dance Weekend Website
+
+## Getting Started
 
 Linux:
 ```
@@ -20,3 +22,9 @@ Structure:
 - old_site_extractor has the original site data
 - `_data/navigation.yml` holds the structure of the site
 - `index.md` holds front matter that will be displayed before the latest even from `_posts`
+
+## Photos
+
+Photos:
+- [2023 Google Photos](https://photos.google.com/share/AF1QipNmy4WBRK787Baz3nx7B7t4b7Y6ePLUmimxzk7NWOJFS__4ZEfUUSFTYbaCDt-nHA?key=dUhlZTNPSEdlQmR5aF85dGlJSDAxbUNBaWxhUGJn)
+- [2022 Google Photos](https://photos.google.com/share/AF1QipPYWmSVcHdrvfnCqVJDaUGftiXgzBX4Pv5zcy5jFJTLI-scWlMtiR4N-QgE_26pnA?pli=1&key=b1JqaWdRNnhpZGpOOUNUOElPampzVnZyYzJPNVNR)
