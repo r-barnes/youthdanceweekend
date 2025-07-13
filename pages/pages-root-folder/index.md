@@ -54,6 +54,6 @@ YDW is an awesome youth-focused traditional dance and music gathering in rural V
 The weekend is open to anyone 18 or older, and is designed to be affordable and accessible, especially to younger dancers. You can read more about the history and mission of YDW, or meet our organizing committee.
 
 Questions about YDW? 
-- <a href="{{ '/faq/' | relative_url }}">visit the FAQ</a>.
+- <a href="{{ '/faq/' | relative_url }}">Visit the FAQ</a>.
 - <a href="{{ '/events/' | relative_url }}">View past schedules.</a>
 - <a href="{{ '/contact/' | relative_url }}">Contact the organizers.</a>
