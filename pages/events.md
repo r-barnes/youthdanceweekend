@@ -1,7 +1,7 @@
 ---
 layout: page
 show_meta: false
-title: "Events"
+title: "Past schedules"
 # subheadline: "Layouts of Feeling Responsive"
 header:
    image_fullwidth: "ydw/cropped-YDW2022DSC04384-scaled-1.jpg"
