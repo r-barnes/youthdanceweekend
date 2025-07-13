@@ -2,10 +2,6 @@
   url: "/"
   side: left
 
-- title: "Events"
-  url: "/events/"
-  side: left
-
 - title: Policies
   url: "/policies/"
   side: left
@@ -14,6 +10,9 @@
   url: "/faq/"
   side: left
 
+- title: "Donate"
+  url: "/donate/"
+  side: left
 
 # - title: "Header Styles"
 #   url: "/headers/"
