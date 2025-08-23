@@ -31,7 +31,8 @@ Kemma Kahn grew up in the contra dance community and is a third generation partn
 ### Rhia Henderson (She/Her)
 Rhia has danced since she could walk. Starting with ballet and highland dancing, then switching to all forms of partner dancing in her teens. She started contra dancing at age 11 at the Concord Scout house, and it has been a huge part of her life ever since. Other dance accolades include starting a northern VT blues and fusion dance scene, and an extensive background in international folk dancing. Outside of the folk world, Rhia lives in Syracuse, NY and is a wildlife biologist studying disease and parasite transmission - only ask if you're prepared to have your ear talked off! She is a cat lover, an advocate for disability access at her school, and has a passion for an ever-changing array of hand crafts.
 
-<img id="rhia" src="{{ site.urlimg }}/ydw/rhia-headshot.jpeg">
+<img id="rhia" src="{{ site.urlimg }}/ydw/rhia-headshot.JPEG">
+
 ### Annie Kidwell (They/Them)
 Annie grew up contra dancing in Kentucky and has followed that love all around the country. Now they’re based in Somerville, MA, where they dance, call, choreograph, and teach. You can find them calling contras around New England and beyond, or teaching Fusion dance in and around Boston. Outside of the social dance world, they're a director and a theatre educator. Ask them about fantasy books, knitting, or Shakespeare! 
 ### Molly Tucker (She/Her)
