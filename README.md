@@ -9,6 +9,19 @@ sudo apt install ruby # Get ruby installed
 bundle config path ~/.bundle-stuff
 ```
 
+On Mac, ruby versions were giving me pain. I installed ruby-env to disambiguate.
+``` sh
+brew install rbenv ruby-build
+
+# Set up for shell, fish in my case
+status is-interactive; and rbenv init - fish | source
+
+# 3.3.5 stable with jekyll
+rbenv install 3.3.5
+rbenv global 3.3.5
+
+```
+
 Local development:
 ```
 bundle exec jekyll serve --config _config.yml,_config_dev.yml --port 4001
@@ -17,6 +30,7 @@ bundle exec jekyll serve --config _config.yml,_config_dev.yml --port 4001
 Structure:
 - `_posts` directory has date-specified site content, the newest appears on the front page
 - `pages` has the site content that is not contained in the `_posts` area: this is most of it because we're not actually running a blog.
+    - `pages-root-folder` contains the main index.md and other important pages
 - `_layouts` converts your pages to the actual site content using html templating. this is what the "framework" does for us.
 - css stuff is in `_sass`
 - old_site_extractor has the original site data
