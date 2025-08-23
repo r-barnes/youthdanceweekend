@@ -47,11 +47,23 @@ title: Registration is open for 2025!
 teaser: "It will take place <strong>September 26-28th, 2025</strong>, at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkins</em></strong><br>"
 ---
 
-### About YDW
+### YDW 2025
+
+This year we will be at the Hulbert Outdoor Center. 
+
+Here is a map of the facilities: [Hulbert Map](/assets/hulbert-facility-map.pdf)
+
+And here is a map of the main building that we will be using: [Hulbert Main House](/assets/hulbert-main-house.pdf)
+
+More details coming soon.
+
+### About
 
 YDW is an awesome youth-focused traditional dance and music gathering in rural Vermont featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far. Our goal is to help and inspire the next generation from across North America to connect with each other and develop skills for participating and leading in all aspects of our vibrant dance community.
 
 The weekend is open to anyone 18 or older, and is designed to be affordable and accessible, especially to younger dancers. You can read more about the history and mission of YDW, or meet our organizing committee.
+
+To read about the members of the Youth Dance Weekend comittee please see the <a href="{{ '/about/' | relative_url }}">About Page</a>
 
 Questions about YDW? 
 - <a href="{{ '/faq/' | relative_url }}">Visit the FAQ</a>.
