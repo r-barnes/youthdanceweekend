@@ -5,7 +5,7 @@ meta_title          : "View our policies for the weekend"
 # subheadline         : "Contact Form"
 # teaser              : "Get in touch with me? Use the contact form."
 header:
-   image_fullwidth: "ydw/cropped-YDW2022DSC04384-scaled-1.jpg"
+   image_fullwidth: ydw/2022-ydw-late-night-dance.jpg
 permalink           : "/policies/"
 ---
 

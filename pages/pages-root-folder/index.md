@@ -6,7 +6,7 @@
 #
 layout: page-fullwidth
 header:
-  image_fullwidth: ydw/cropped-YDW2022DSC04384-scaled-1.jpg
+  image_fullwidth: ydw/2022-ydw-late-night-dance.jpg
 # widget1:
 #   title: "Blog & Portfolio"
 #   url: 'http://phlow.github.io/feeling-responsive/blog/'
