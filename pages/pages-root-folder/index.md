@@ -32,22 +32,21 @@ header:
 # to use the main color or success, alert or secondary.
 # To change colors see sass/_01_settings_colors.scss
 #
-# TODO: Uncomment once registration is open and add a new link
-callforaction:
-  url: https://docs.google.com/forms/d/e/1FAIpQLSeHyxix85ijfrNTxvm-YmUQkxpPSjYU6CzMw4rH7mSpXjcQUQ/viewform
-  text: Register here
-  style: alert
+#callforaction:
+#  url: https://docs.google.com/forms/d/e/1FAIpQLSeHyxix85ijfrNTxvm-YmUQkxpPSjYU6CzMw4rH7mSpXjcQUQ/viewform
+#  text: Register here
+#  style: alert
 permalink: /index.html
 #
 # This is a nasty hack to make the navigation highlight
 # this page as active in the topbar navigation
 #
 homepage: true
-title: Registration is open for 2025!
-teaser: "It will take place <strong>September 26-28th, 2025</strong>, at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkins</em></strong><br>"
+title: YDW 2025
+#teaser: "It will take place <strong>September 26-28th, 2025</strong>, at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkins</em></strong><br>"
 ---
 
-### YDW 2025
+## Location
 
 This year we will be at the Hulbert Outdoor Center. 
 
@@ -55,9 +54,83 @@ Here is a map of the facilities: [Hulbert Map](/assets/hulbert-facility-map.pdf)
 
 And here is a map of the main building that we will be using: [Hulbert Main House](/assets/hulbert-main-house.pdf)
 
-More details coming soon.
+## Schedule
 
-### About
+### Friday 
+
+**Arrival & Check-In** - Porch of main building: 4:00 PM – 6:00 PM 
+*Please be prepared to show a negative rapid test to a Committee member after arrival on site*
+Second test 24 hours later before sat dinner
+
+**Dinner** - Dining Hall: 6:30 - 7:30 PM
+*Potluck*
+
+**Welcome Dance - Dance Hall:** 8:00 PM – 11:30 PM
+*Contra, announcements, then English*
+
+**Snack!** - Dining Hall: 11:30 PM
+
+**Line dancing** - Upper Dining Hall:  Midnight onward
+
+
+### Saturday 
+**Breakfast** - Dining Hall: 8:30AM – 9:30AM
+
+**Balfolk** - Dance Hall: 9:30AM-10:45AM
+*Helen, Rose, and Guillaume*
+
+**English Country Dancing** - Dance Hall: 11AM-12:15AM
+ 
+
+**Lunch and Rapid Testing** - Table outside Dining Hall/ Dining Hall:  12:30PM-1:30pm
+*Please present your negative test to a Committee member to be checked off the list.*
+
+**Camper-led Activities:** 1:45 PM – 2:45 PM
+ - **Line Dancing 2.0** - Dance Hall
+ - **Sea Shanty Sing** - Pirate Ship(!!!)
+
+**Contra Lab** - Dance Hall: 3-4 PM
+
+**Community Conversation** - 4:45 – 5:45 PM
+
+**Dinner** - Dining Hall: 6 - 7 PM
+
+**Evening Dance** - Dance Hall: 7:30- 11:45
+*Contra & English, with Charts and Graphs at the break!*
+
+**Snack!** - Dining Hall: 11:30 PM
+
+**Midnight and straight on 'til morning (or not)**
+- **Fusion Dancing** - Upper Dining Hall
+- **Jamming** - Party Barn
+- **Pub Sing** - The Cave
+*Or anything else you want!*
+
+### Sunday 
+**Breakfast** - Dining Hall 8 – 9 AM
+
+**Cabin Cleanout** - 9 - 9:30 AM
+
+**Morning Waltzing**- Dance Hall 9:30 – 10:30 AM 
+*Pegasus Collective*
+
+**Camper-led Contra** - Dance Hall: 10:30 AM – noon 
+
+**Lunch** - Dining Hall: noon - 12:45 pm
+
+**Photos at 12:45!**
+
+**Farewell Dance** - Dance Hall: 1:15 – 3:00 PM 
+
+**Farewell Snacks!** - Front Porch: 3:00 PM
+
+**Cleaning, goodbyes, help moving furniture!** - After 3:00 PM
+
+Pack your bags, and sweep out your cabin. HELP US PACK UP HOBART
+
+We love you, but you absolutely gotta leave by 4 PM. See you next year!
+
+## About
 
 YDW is an awesome youth-focused traditional dance and music gathering in rural Vermont featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far. Our goal is to help and inspire the next generation from across North America to connect with each other and develop skills for participating and leading in all aspects of our vibrant dance community.
 
