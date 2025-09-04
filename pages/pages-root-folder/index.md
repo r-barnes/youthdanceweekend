@@ -58,14 +58,14 @@ And here is a map of the main building that we will be using: [Hulbert Main Hous
 
 ### Friday 
 
-**Arrival & Check-In** - Porch of main building: 4:00 PM – 6:00 PM 
+**Arrival & Check-In** - Porch of main building: 4:00 – 6:00 PM 
 *Please be prepared to show a negative rapid test to a Committee member after arrival on site*
 Second test 24 hours later before sat dinner
 
 **Dinner** - Dining Hall: 6:30 - 7:30 PM
 *Potluck*
 
-**Welcome Dance - Dance Hall:** 8:00 PM – 11:30 PM
+**Welcome Dance - Dance Hall:** 8:00 – 11:30 PM
 *Contra, announcements, then English*
 
 **Snack!** - Dining Hall: 11:30 PM
@@ -74,28 +74,28 @@ Second test 24 hours later before sat dinner
 
 
 ### Saturday 
-**Breakfast** - Dining Hall: 8:30AM – 9:30AM
+**Breakfast** - Dining Hall: 8:30 – 9:30 AM
 
-**Balfolk** - Dance Hall: 9:30AM-10:45AM
+**Balfolk** - Dance Hall: 9:30 - 10:45 AM
 *Helen, Rose, and Guillaume*
 
-**English Country Dancing** - Dance Hall: 11AM-12:15AM
+**English Country Dancing** - Dance Hall: 11 - 12:15 PM
  
 
-**Lunch and Rapid Testing** - Table outside Dining Hall/ Dining Hall:  12:30PM-1:30pm
+**Lunch and Rapid Testing** - Table outside Dining Hall/ Dining Hall:  12:30 - 1:30 PM
 *Please present your negative test to a Committee member to be checked off the list.*
 
-**Camper-led Activities:** 1:45 PM – 2:45 PM
+**Camper-led Activities:** 1:45 – 2:45 PM
  - **Line Dancing 2.0** - Dance Hall
  - **Sea Shanty Sing** - Pirate Ship(!!!)
 
-**Contra Lab** - Dance Hall: 3-4 PM
+**Contra Lab** - Dance Hall: 3 - 4 PM
 
 **Community Conversation** - 4:45 – 5:45 PM
 
 **Dinner** - Dining Hall: 6 - 7 PM
 
-**Evening Dance** - Dance Hall: 7:30- 11:45
+**Evening Dance** - Dance Hall: 7:30 - 11:45 PM
 *Contra & English, with Charts and Graphs at the break!*
 
 **Snack!** - Dining Hall: 11:30 PM
@@ -116,7 +116,7 @@ Second test 24 hours later before sat dinner
 
 **Camper-led Contra** - Dance Hall: 10:30 AM – noon 
 
-**Lunch** - Dining Hall: noon - 12:45 pm
+**Lunch** - Dining Hall: noon - 12:45 PM
 
 **Photos at 12:45!**
 
