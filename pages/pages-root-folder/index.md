@@ -46,9 +46,9 @@ title: YDW 2025
 #teaser: "It will take place <strong>September 26-28th, 2025</strong>, at our new location <strong>Hulburt Outdoor Center in Fairlee, VT—</strong>Featuring <strong><em>The Pegasus Collective</em></strong> with <strong><em>Imogen Mills</em></strong> and <strong><em>Helen Kuhar & Rose Jackson</em></strong> with <strong><em>Alyssa (Lyss) Adkins</em></strong><br>"
 ---
 
-## Location
+## Where/When
 
-This year we will be at the Hulbert Outdoor Center. 
+This year we will be at the Hulbert Outdoor Center, September 26-28th.
 
 Here is a map of the facilities: [Hulbert Map](/assets/hulbert-facility-map.pdf)
 
