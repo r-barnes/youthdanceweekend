@@ -104,6 +104,7 @@ div.ydw {
     background-size:auto 200px;
     height:700px;
     position:relative;
+    overflow: hidden;
 }
 
 #tree {
@@ -112,6 +113,9 @@ div.ydw {
     bottom: 0;
     position: absolute;
     height: 700px;
+    max-width: 40%;
+    object-fit: contain;
+    object-position: bottom right;
 }
 
 
@@ -124,6 +128,7 @@ div.ydw {
     background-size:auto 50px;
     height:300px;
     position:relative;
+    overflow: hidden;
 }
 
 #tree {
@@ -133,6 +138,7 @@ div.ydw {
     bottom: 0;
     position: absolute;
     height: unset;
+    max-width: 35%;
 }
 }
 

@@ -6,3 +6,5 @@ _site
 .sass-cache
 Gemfile.lock
 output/
+.claude/
+email_attachments/
