@@ -29,3 +29,13 @@ Rebecca Lay called contras at YDW 2009. **Magic Foot** performed at YDW 2009, pl
 - YDW 2008 was the inaugural event: 100% of attendees were newcomers.
 - The first three YDWs (2008, 2009, 2010) used an age-based pricing system; the pay-what-you-can system was introduced in 2011.
 - Many traditions that started in the early years are still essential today: Money Musk, Softly Good Tummas, techno contras, shape-note singing, and tabletop discussion topics.
+
+## Pricing
+
+2008–2010 used an **age-based pricing system**:
+- Ages 18–22: lower rate
+- Ages 23–28: medium rate
+- Ages 29–35: higher rate
+- Ages 36+: full rate
+
+Specific amounts are not documented. This system was replaced by pay-what-you-can starting in 2011.
