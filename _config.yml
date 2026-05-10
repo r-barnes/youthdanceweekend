@@ -5,6 +5,29 @@ credits: '<p>Created with &hearts; by <a href="https://richard.science/">Richard
 
 author: rbarnes
 
+navigation:
+  - title: Home
+    url: "/"
+    side: left
+  - title: About
+    url: "/about/"
+    side: left
+  - title: Policies
+    url: "/policies/"
+    side: left
+  - title: FAQ
+    url: "/faq/"
+    side: left
+  - title: Donate
+    url: "/donate/"
+    side: left
+  - title: Recipes
+    url: "/recipes/"
+    side: left
+  - title: Contact
+    url: "/contact/"
+    side: right
+
 url: 'https://youthdanceweekend.org'
 baseurl: '/'
 
