@@ -70,6 +70,8 @@ body.video cite { color: #fff; }
 
 #masthead {
     background-color: $primary-color;
+    overflow: hidden;
+    position: relative;
 }
 #masthead-no-image-header {
     background-color: $primary-color;
