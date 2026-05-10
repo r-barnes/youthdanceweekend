@@ -10,44 +10,18 @@
   url: "/policies/"
   side: left
 
-- title: "FAQ"
+- title: FAQ
   url: "/faq/"
   side: left
 
-- title: "Donate"
+- title: Donate
   url: "/donate/"
   side: left
 
-- title: "Recipes"
+- title: Recipes
   url: "/recipes/"
   side: left
 
-# - title: "Header Styles"
-#   url: "/headers/"
-#   side: left
-#   dropdown:
-#   - title: "Header with Full-Width-Image"
-#     url: "/design/header-full-width-image/"
-#   - title: "Header with Image and Pattern"
-#     url: "/design/header-image-pattern/"
-#   - title: "Header with image and color"
-#     url: "/design/header-image-color/"
-#   - title: "Header Only With Logo"
-#     url: "/design/header-logo-only/"
-#   - title: "Header With Text"
-#     url: "/design/header-with-text/"
-#   - title: "No Header"
-#     url: "/design/no-header/"
-#   - title: "No Header but Image"
-#     url: "/design/no-header-but-image/"
-
-# - title: Blog
-#   url: "/blog/"
-#   side: left
-#   dropdown:
-#   - title: "Blog Archive"
-#     url: "/blog/archive/"
-
-- title: "Contact"
+- title: Contact
   url: "/contact/"
   side: right
