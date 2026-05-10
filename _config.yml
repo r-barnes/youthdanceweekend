@@ -52,7 +52,7 @@ plugins:
 
 # Theme works best with Kramdown (using the table of contents function)
 markdown           : kramdown
-permalink          : /:categories/:title/
+permalink          : /:title/
 highlight          : rouge
 excerpt_separator  : "<!--more-->"
 include            : ['.htaccess']

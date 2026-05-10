@@ -62,11 +62,11 @@ format: frontpage
 
     <hr>
 
-    {% unless site.categories.events == empty %}
-    {% for post in site.categories.events limit:1 %}
-    <h1>{{ post.title }}</h1>
-    {{ post.content }}
-    {% endfor %}
+    {% assign events = site.pages | where: "event", true | sort: "date" %}
+    {% unless events == empty %}
+    {% assign latest = events | last %}
+    <h1>{{ latest.title }}</h1>
+    {{ latest.content }}
     {% endunless %}
 </div><!-- /.row -->
 

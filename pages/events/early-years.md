@@ -1,11 +1,11 @@
 ---
 layout: page
 title:  "YDW 2008–2010: The Early Years"
-categories:
-    - events
-tags:
 header: no
 author: ydw
+permalink: /events/early-years/
+event: true
+date: 2008-01-01
 ---
 
 The first three Youth Dance Weekends were held at **Timberlake Camp at Field and Wilderness in Plymouth, Vermont**. YDW moved to Kinhaven Music School in Weston, VT in 2011 after Hurricane Irene damaged the Timberlake venue.
