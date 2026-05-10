@@ -18,6 +18,10 @@
   url: "/donate/"
   side: left
 
+- title: "Recipes"
+  url: "/recipes/"
+  side: left
+
 # - title: "Header Styles"
 #   url: "/headers/"
 #   side: left
