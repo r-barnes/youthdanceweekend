@@ -1,14 +1,15 @@
 // Styles for YDW historical event pages
 
+[itemprop="articleSection"],
 .post-content,
 .page-content {
   img {
     display: block;
-    max-width: 288px; // ~3 inches at 96dpi
-    max-height: 288px;
+    max-width: 300px;
+    max-height: 300px;
     width: auto;
     height: auto;
-    border-radius: 8px;
+    border-radius: 20px;
     margin: 1rem auto;
     object-fit: cover;
   }
