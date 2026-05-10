@@ -97,6 +97,7 @@ The weekend is open to anyone 18 or older, and is designed to be affordable and 
 To read about the members of the Youth Dance Weekend comittee please see the <a href="{{ '/about/' | relative_url }}">About Page</a>
 
 Questions about YDW? 
+- <a href="{{ '/recipes/' | relative_url }}">View our potluck recipes.</a>
 - <a href="{{ '/faq/' | relative_url }}">Visit the FAQ</a>.
 - <a href="{{ '/events/' | relative_url }}">View past schedules.</a>
 - <a href="{{ '/contact/' | relative_url }}">Contact the organizers.</a>

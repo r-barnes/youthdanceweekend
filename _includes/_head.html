@@ -14,7 +14,7 @@
 {% capture description %}{% if page.meta_description %}{{ page.meta_description }}{% elsif page.teaser %}{{ page.teaser }}{% elsif page.excerpt %}{{ page.excerpt }}{% elsif site.description %}{{ site.description }}{% endif %}{% endcapture %}
 {% assign description = description | strip_html | escape | strip %}
 
-{% capture title %}{% if page.meta_title %}{{ page.meta_title}}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title | strip_html | strip }}{% endif %}{% endcapture %}
+{% capture title %}{% if page.meta_title %}{{ page.meta_title}}{% elsif page.title %}{{ page.title }}{% else %}Youth Dance Weekend{% endif %}{% endcapture %}
 
 {% assign title = title | strip_html | escape | strip_newlines %}
 
@@ -56,9 +56,9 @@
 	<meta property="og:title" content="{{ title }}">
 	<meta property="og:description" content="{{ description }}">
 	<meta property="og:url" content="{{ url }}{{ page.url }}">
-	<meta property="og:locale" content="{% if site.og_locale == nil %}en_EN{% else %}{{ site.og_locale }}{% endif %}">
+	<meta property="og:locale" content="en_EN">
 	<meta property="og:type" content="website">
-	<meta property="og:site_name" content="{{ site.title }}">
+	<meta property="og:site_name" content="Youth Dance Weekend">
 	{% if page.image.title %}<meta property="og:image" content="{{ site.urlimg }}{{ page.image.title }}">{% endif %}
 	{% if site.socialmedia.facebook %}<meta property="article:author" content="https://www.facebook.com/{{ site.socialmedia.facebook }}">{% endif %}
 
@@ -81,7 +81,10 @@
 		<link rel="stylesheet" href="{{ url }}/assets/mediaelement_js/mediaelementplayer.min.css">
 	{% endif %}
 
-	{% include _favicon.html %}
+	<link rel="icon" sizes="16x16" href="{{ "/assets/img/favicon-16x16.png" | absolute_url }}">
+	<link rel="icon" sizes="32x32" href="{{ "/assets/img/favicon-32x32.png" | absolute_url }}">
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{ "/assets/img/apple-touch-icon.png" | absolute_url }}">
+	<link rel="apple-touch-icon-precomposed" href="{{ "/assets/img/apple-touch-icon.png" | absolute_url }}">
 
 	{% unless page.style == NULL %}
 	<style type="text/css">{{ page.style }}</style>

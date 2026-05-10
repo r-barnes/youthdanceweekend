@@ -1,32 +1,5 @@
-title: 'Youth Dance Weekend'
-slogan: 'Youth Dance Weekend'
 description: 'YDW is a youth-focused traditional dance and music gathering featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far.'
-credits: '<p>Created with &hearts; by <a href="https://richard.science/">Richard</a> with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> based on <a href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a>.</p>'
-
-author: rbarnes
-
-navigation:
-  - title: Home
-    url: "/"
-    side: left
-  - title: About
-    url: "/about/"
-    side: left
-  - title: Policies
-    url: "/policies/"
-    side: left
-  - title: FAQ
-    url: "/faq/"
-    side: left
-  - title: Donate
-    url: "/donate/"
-    side: left
-  - title: Recipes
-    url: "/recipes/"
-    side: left
-  - title: Contact
-    url: "/contact/"
-    side: right
+data_dir: .
 
 url: 'https://youthdanceweekend.org'
 baseurl: '/'
@@ -50,8 +23,6 @@ exclude:
     - INSTALL.md
     - vendor
 
-language: 'en'
-
 # Used › default.html front-matter and compress.html
 # Options › http://jch.penibelst.de
 compress_html:
@@ -70,14 +41,6 @@ defaults:
     values:
       show_meta: false
       comments: false
-      author: rbarnes
-
-favicon-32x32                        : 'favicon-32x32.png'
-apple-touch-icon-180x180-precomposed : 'apple-touch-icon.png'
-apple-touch-icon-precomposed         : 'apple-touch-icon.png'
-
-og_locale                            : 'en_EN'
-og_type                              : 'website'
 
 sass:
     sass_dir : _sass
