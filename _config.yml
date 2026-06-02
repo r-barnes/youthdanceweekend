@@ -45,5 +45,5 @@ defaults:
       comments: false
 
 sass:
-    sass_dir : _sass
+    sass_dir : framework/sass
     style    : :compressed
