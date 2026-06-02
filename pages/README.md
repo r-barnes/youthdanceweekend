@@ -15,4 +15,4 @@ Copy an existing page as a starting point. Update the front matter:
 
 Then replace the content below the front matter with your new content, written in Markdown.
 
-Pages for individual events live in the `events/` subfolder.
+Pages for individual events live in the `events/` subfolder. Edit them the same way as other pages, just inside that folder.
