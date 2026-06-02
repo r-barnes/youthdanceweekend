@@ -1,3 +1,14 @@
+# navigation.yml — Site navigation
+#
+# Each entry below appears as a link in the site header.
+# Entries with side: left appear on the left; side: right on the right.
+#
+# To add a new link, copy an existing entry and update title and url.
+# To reorder links, move entries up or down (keep the leading dash).
+# To remove a link, delete its entry (the "- title:" line and the two lines after it).
+#
+# The url must match the permalink in the corresponding page file.
+
 - title: Home
   url: "/"
   side: left
