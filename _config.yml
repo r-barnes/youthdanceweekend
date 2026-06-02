@@ -1,6 +1,6 @@
 description: 'YDW is a youth-focused traditional dance and music gathering featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far.'
 data_dir: .
-layouts_dir:  framework/layouts
+layouts_dir: framework/layouts
 
 url: 'https://youthdanceweekend.org'
 baseurl: '/'
