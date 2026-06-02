@@ -8,9 +8,9 @@ title: YDW 2026
 teaser: "It will take place <strong>Oct 2-4th, 2026</strong> at the <strong>Hulburt Outdoor Center in Fairlee, VT</strong><br>"
 ---
 
-Here is a map of the facilities: [Hulbert Map](/assets/hulbert-facility-map.pdf)
+Here is a map of the facilities: [Hulbert Map](/documents/hulbert-facility-map.pdf)
 
-And here is a map of the main building that we will be using: [Hulbert Main House](/assets/hulbert-main-house.pdf)
+And here is a map of the main building that we will be using: [Hulbert Main House](/documents/hulbert-main-house.pdf)
 
 ## Example schedule from 2025
 
