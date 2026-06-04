@@ -1,5 +1,5 @@
 description: 'YDW is a youth-focused traditional dance and music gathering featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far.'
-data_dir: .
+data_dir: _data
 destination: _generated_site
 layouts_dir: framework/layouts
 includes_dir: framework/includes
