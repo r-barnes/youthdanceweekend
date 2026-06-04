@@ -16,6 +16,10 @@ This weekend will feature **Cojiro** (Jess Newman and Mark Price) playing for co
 
 Lottery registration will open **June 3rd** and close **July 12th**.
 
+Sign up to hear when registration opens and get other YDW news:
+
+<script async src="https://eomail5.com/form/62093b68-53eb-11f1-9a7c-77104adec425.js" data-form="62093b68-53eb-11f1-9a7c-77104adec425"></script>
+
 ### Summer Benefit Dance
 
 We are also working on putting together a summer benefit dance! All are welcome. This will take place on **July 11th at the Guiding Star Grange in Greenfield, MA**. All proceeds will go towards Youth Dance Weekend in order to ensure we can continue providing low-cost registration and scholarships, and paying our staff as our cost of operation continues to grow. Stay tuned for more info!
@@ -26,7 +30,7 @@ Here is a map of the facilities: [Hulbert Map](/documents/hulbert-facility-map.p
 
 And here is a map of the main building that we will be using: [Hulbert Main House](/documents/hulbert-main-house.pdf)
 
-## Example schedule
+### Example schedule
 
 Curious how the weekend flows? See the [full schedule from 2025](/events/ydw2025/).
 

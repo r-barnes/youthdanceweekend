@@ -10,3 +10,7 @@ header:
 ---
 
 To contact the YDW committee, email register4ydw@gmail.com
+
+For the latest news and to get notified about registration:
+
+<script async src="https://eomail5.com/form/62093b68-53eb-11f1-9a7c-77104adec425.js" data-form="62093b68-53eb-11f1-9a7c-77104adec425"></script>
