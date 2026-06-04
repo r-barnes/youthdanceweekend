@@ -13,3 +13,5 @@ To update the site navigation, edit **`navigation.yml`** in this folder. Comment
 Everything else — `framework/`, `_config.yml`, `Gemfile`, and so on — is the site's technical infrastructure. You shouldn't need to touch it for everyday content updates.
 
 When the site is built locally, the output goes into `_generated_site/`. That folder is ignored by git and can be safely deleted at any time.
+
+The `CNAME` file contains the custom domain (`youthdanceweekend.org`) and tells GitHub Pages to serve this site at that address. Don't delete or rename it.
