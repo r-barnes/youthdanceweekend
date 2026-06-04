@@ -39,7 +39,7 @@ A: YDW uses a sliding scale to help make the registration fee accessible for you
 - Some generous folks paid $255, which helped cover the cost of one person who paid the low-income rate.
 - There were also tiers for YDW sustainers ($375) and benefactors ($450).
 
-With our change in venue, prices may fluctuate slightly, and this year we will also be pro-rating based on housing choice. More details to come.
+With our change in venue, prices may fluctuate slightly. More details to come.
 
 ### Q: Can I get a scholarship to come to YDW, or a discount in exchange for volunteer work?
 
@@ -47,8 +47,8 @@ A: Not really. YDW is designed to be affordable from the ground up. We endeavor 
 
 If the cost is still prohibitive for you, we suggest asking your local dance group to sponsor you or contribute towards your travel costs. If you’ve got disposable income to spare, we encourage you to sponsor someone else or pay more than the basic rate to help someone else attend.
 
-### Q: How does the housing choice affect my fee?
-A: This year we are using both wood cabins and canvas cabins for housing at Hulbert, and we are pro-rating attendance fees based on your housing choice. Camping in your own tent is also an option. The sign-up form simply asks for your preference — indicating a choice does not lock you into anything just yet. The canvas cabins do not have electricity, but there will be spots around camp to charge your devices, and there are showers and bathroom facilities close by no matter which housing you choose. If you have accessibility needs, let us know on the form and we can figure out the right arrangement together.
+### Q: How do I choose my housing?
+A: This year we are using both wood cabins and canvas cabins for housing at Hulbert, and camping in your own tent is also an option. The sign-up form simply asks for your preference — indicating a choice does not lock you into anything just yet. The canvas cabins do not have electricity, but there will be spots around camp to charge your devices, and there are showers and bathroom facilities close by no matter which housing you choose. If you have accessibility needs, let us know on the form and we can figure out the right arrangement together.
 
 ### Q: Where is YDW?
 YDW 2025 will be held at Hulbert Outdoor Center, 2899 Lake Morey Rd, Fairlee, VT 05045. 
