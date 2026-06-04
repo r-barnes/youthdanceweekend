@@ -6,8 +6,9 @@ permalink: /index.html
 homepage: true
 callforaction:
   url: https://docs.google.com/forms/d/e/1FAIpQLSd6zm-8v1AuBz3JcApYPwL6moa2p93uP5HDZx3HLGzJpXQccQ/viewform
-  text: Sign Up for the Lottery
-title: YDW 2026
+  text: Sign up for YDW 2026
+  style: alert
+meta_title: YDW 2026
 teaser: "It will take place <strong>October 2–4, 2026</strong> at the <strong>Hulbert Outdoor Center in Fairlee, VT</strong><br>"
 ---
 
