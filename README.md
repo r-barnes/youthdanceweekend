@@ -10,8 +10,18 @@ These are the three folders you'll work with:
 
 To update the site navigation, edit **`navigation.yml`** in this folder. Comments inside that file explain how.
 
-Everything else — `framework/`, `_config.yml`, `Gemfile`, and so on — is the site's technical infrastructure. You shouldn't need to touch it for everyday content updates.
+## Technical infrastructure
 
-When the site is built locally, the output goes into `_generated_site/`. That folder is ignored by git and can be safely deleted at any time.
+Everything below is the site's technical infrastructure. You shouldn't need to touch it for everyday content updates.
 
-The `CNAME` file contains the custom domain (`youthdanceweekend.org`) and tells GitHub Pages to serve this site at that address. Don't delete or rename it.
+- **`framework/`** — Jekyll layouts, includes, and Sass stylesheets.
+- **`_config.yml`** — main Jekyll configuration (site URL, theme settings, build options).
+- **`_config_dev.yml`** — overrides for local development (run with `jekyll serve --config _config.yml,_config_dev.yml`).
+- **`_data/navigation.yml`** — site navigation menu structure.
+- **`Gemfile`** / **`Gemfile.lock`** — Ruby gem dependencies for building the site.
+- **`jekyll-theme-feeling-responsive.gemspec`** — gem specification for the theme.
+- **`CNAME`** — custom domain (`youthdanceweekend.org`); tells GitHub Pages where to serve the site. Don't delete or rename it.
+- **`LICENSE`** — open-source license for the theme.
+- **`_generated_site/`** — local build output; ignored by git and safe to delete.
+- **`.github/`** — GitHub Actions workflows for automated deployment.
+- **`.bundle/`**, **`.jekyll-cache/`**, **`.gitignore`** — build tooling caches and git ignore rules.
