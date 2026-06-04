@@ -47,6 +47,9 @@ A: Not really. YDW is designed to be affordable from the ground up. We endeavor 
 
 If the cost is still prohibitive for you, we suggest asking your local dance group to sponsor you or contribute towards your travel costs. If you’ve got disposable income to spare, we encourage you to sponsor someone else or pay more than the basic rate to help someone else attend.
 
+### Q: How does the housing choice affect my fee?
+A: This year we are using both wood cabins and canvas cabins for housing at Hulbert, and we are pro-rating attendance fees based on your housing choice. Camping in your own tent is also an option. The sign-up form simply asks for your preference — indicating a choice does not lock you into anything just yet. The canvas cabins do not have electricity, but there will be spots around camp to charge your devices, and there are showers and bathroom facilities close by no matter which housing you choose. If you have accessibility needs, let us know on the form and we can figure out the right arrangement together.
+
 ### Q: Where is YDW?
 YDW 2025 will be held at Hulbert Outdoor Center, 2899 Lake Morey Rd, Fairlee, VT 05045. 
 From 2008–2010 YDW was held at Farm & Wilderness in Plymouth, VT. From 2011-2024, YDW was held at Kinhaven Music School in Weston, VT. 
@@ -54,7 +57,12 @@ From 2008–2010 YDW was held at Farm & Wilderness in Plymouth, VT. From 2011-20
 ### Q: What is Hulbert Outdoor Center like? How do I prepare?
 - Housing: Hulbert offers both wood cabins and canvas cabins. 
     - The wood cabins are winterized and have electricity, and each one contains 4 rooms and 2 bathrooms, each room contains 4 twin beds. 
+
+    ![Inside a wood cabin bedroom](/images/ydw/hoc-cabin-bedroom.jpg)
+
     - The canvas cabins are large four-sided tent structures set up on wooden platforms, and each one contains 2-4 twin-sized cots. The canvas cabins are not winterized and do not have electricity. There are bath-houses located close by the canvas cabins.
+
+    ![A canvas cabin](/images/ydw/canvas-cabin.jpg)
     - You may also choose to bring your own tent and camp.
     - For all housing options, campers must provide their own bedlinens. Please remember that it gets cold in Vermont in September. Bring warm clothes and bedding!
 
