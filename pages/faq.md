@@ -4,7 +4,7 @@ show_meta           : false
 title               : "FAQ"
 subheadline         : "Frequently Asked Questions"
 header:
-   image_fullwidth: ydw/2022-ydw-late-night-dance.jpg
+   image_fullwidth: ydw/2022-ydw-late-night-dance.webp
 permalink           : "/faq/"
 ---
 

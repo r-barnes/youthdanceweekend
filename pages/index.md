@@ -1,7 +1,7 @@
 ---
 layout: page-fullwidth
 header:
-  image_fullwidth: ydw/2022-ydw-late-night-dance.jpg
+  image_fullwidth: ydw/2022-ydw-late-night-dance.webp
 permalink: /index.html
 homepage: true
 callforaction:

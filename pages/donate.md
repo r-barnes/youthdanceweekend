@@ -3,7 +3,7 @@ layout              : page-fullwidth
 show_meta           : false
 title               : "Donate to YDW"
 header:
-   image_fullwidth: ydw/2022-ydw-late-night-dance.jpg
+   image_fullwidth: ydw/2022-ydw-late-night-dance.webp
 permalink           : "/donate/"
 callforaction:
   url: https://www.paypal.com/donate/?hosted_button_id=XZBE5B7RWFQ7C
