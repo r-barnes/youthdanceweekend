@@ -5,7 +5,7 @@ meta_title          : "View our policies for the weekend"
 # subheadline         : "Contact Form"
 # teaser              : "Get in touch with me? Use the contact form."
 header:
-   image_fullwidth: ydw/2022-ydw-late-night-dance.webp
+   image_fullwidth: ydw/headers/2022-ydw-late-night-dance.webp
 permalink           : "/about/"
 ---
 

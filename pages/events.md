@@ -4,7 +4,7 @@ show_meta: false
 title: "Past schedules"
 # subheadline: "Layouts of Feeling Responsive"
 header:
-   image_fullwidth: ydw/2022-ydw-late-night-dance.webp
+   image_fullwidth: ydw/headers/2022-ydw-late-night-dance.webp
 permalink: "/events/"
 ---
 <ul>

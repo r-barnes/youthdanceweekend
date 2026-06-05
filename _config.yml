@@ -8,7 +8,7 @@ url: 'https://youthdanceweekend.org'
 baseurl: '/'
 
 urlimg: 'https://youthdanceweekend.org/images/'
-og_image: 'ydw/2022-ydw-late-night-dance.webp'
+og_image: 'ydw/headers/2022-ydw-late-night-dance.webp'
 
 # Logo size is 600x80 pixels
 logo: "logo.png"

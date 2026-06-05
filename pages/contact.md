@@ -6,7 +6,7 @@ meta_title          : "Contact and use our contact form"
 # teaser              : "Get in touch with me? Use the contact form."
 permalink           : "/contact/"
 header:
-   image_fullwidth: ydw/2022-ydw-late-night-dance.webp
+   image_fullwidth: ydw/headers/2022-ydw-late-night-dance.webp
 ---
 
 To contact the YDW committee, email register4ydw@gmail.com
