@@ -53,18 +53,30 @@
 	<meta property="og:locale" content="en_EN">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Youth Dance Weekend">
-	{% if page.image.title %}<meta property="og:image" content="{{ site.urlimg }}{{ page.image.title }}">{% endif %}
+	{% if page.image.title %}
+	<meta property="og:image" content="{{ site.urlimg }}{{ page.image.title }}">
+	{% elsif page.header.image_fullwidth %}
+	<meta property="og:image" content="{{ site.urlimg }}{{ page.header.image_fullwidth }}">
+	{% elsif site.og_image %}
+	<meta property="og:image" content="{{ site.urlimg }}{{ site.og_image }}">
+	{% endif %}
 	{% if site.socialmedia.facebook %}<meta property="article:author" content="https://www.facebook.com/{{ site.socialmedia.facebook }}">{% endif %}
 
 
 	{% if site.socialmedia.twitter %}
 	<!-- Twitter -->
-	<meta name="twitter:card" content="summary">
+	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="{{ site.socialmedia.twitter }}">
 	<meta name="twitter:creator" content="{{ site.socialmedia.twitter }}">
 	<meta name="twitter:title" content="{{ title }}">
 	<meta name="twitter:description" content="{{ description }}">
-	{% if page.image.title %}<meta name="twitter:image" content="{{ site.urlimg }}{{ page.image.title }}">{% endif %}
+	{% if page.image.title %}
+	<meta name="twitter:image" content="{{ site.urlimg }}{{ page.image.title }}">
+	{% elsif page.header.image_fullwidth %}
+	<meta name="twitter:image" content="{{ site.urlimg }}{{ page.header.image_fullwidth }}">
+	{% elsif site.og_image %}
+	<meta name="twitter:image" content="{{ site.urlimg }}{{ site.og_image }}">
+	{% endif %}
 	{% endif %}
 
 	<link type="text/plain" rel="author" href="{{ url}}/humans.txt">
