@@ -8,3 +8,4 @@ Gemfile.lock
 output/
 .claude/
 email_attachments/
+_lottery/
