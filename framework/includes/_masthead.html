@@ -60,11 +60,8 @@
 </div><!-- /#masthead -->
 <script>
 (function() {
-  var pool = [
-    ['/images/ydw/headers/2022-ydw-late-night-dance.webp', 'center center'],
-    ['/images/ydw/headers/autumn-hillside.webp', 'center bottom'],
-    ['/images/ydw/headers/2022-contra-dancer.webp', 'center center'],
-    ['/images/ydw/headers/2018-dance-hall.webp', 'center bottom']
+  var pool = [{% for img in site.data.header_images %}
+    ['/images/ydw/headers/{{ img.file }}', '{{ img.position }}']{% unless forloop.last %},{% endunless %}{% endfor %}
   ];
   var pick = pool[Math.floor(Math.random() * pool.length)];
   var el = document.getElementById('masthead');
