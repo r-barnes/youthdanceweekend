@@ -61,12 +61,15 @@
 <script>
 (function() {
   var pool = [
-    '/images/ydw/2022-ydw-late-night-dance.webp',
-    '/images/ydw/cropped-15366181344_8fffbb800b_k.webp',
-    '/images/ydw/cropped-YDW2022DSC04384-scaled-1.webp'
+    ['/images/ydw/2022-ydw-late-night-dance.webp', 'center center'],
+    ['/images/ydw/cropped-15366181344_8fffbb800b_k.webp', 'center center'],
+    ['/images/ydw/cropped-YDW2022DSC04384-scaled-1.webp', 'center center'],
+    ['/images/ydw/20180915_011134.webp', 'center bottom']
   ];
-  var img = pool[Math.floor(Math.random() * pool.length)];
-  document.getElementById('masthead').style.backgroundImage = 'url(' + img + ')';
+  var pick = pool[Math.floor(Math.random() * pool.length)];
+  var el = document.getElementById('masthead');
+  el.style.backgroundImage = 'url(' + pick[0] + ')';
+  el.style.backgroundPosition = pick[1];
 })();
 </script>
 
