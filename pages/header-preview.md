@@ -5,15 +5,19 @@ header: no
 permalink: /header-preview/
 noindex: true
 style: |
-  .header-preview-item { margin-bottom: 2rem; }
+  .header-preview-item { margin-bottom: 2.5rem; }
   .header-preview-item h3 { margin-bottom: 0.25rem; font-size: 0.9rem; font-family: monospace; color: #555; }
   .header-preview-banner {
-    width: 100%;
-    height: 280px;
+    display: block;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 4px;
+    height: 200px;
   }
+  @media (min-width: 641px)  { .header-preview-banner { height: 280px; } }
+  @media (min-width: 1025px) { .header-preview-banner { height: 310px; } }
+  @media (min-width: 1441px) { .header-preview-banner { height: 380px; } }
 ---
 
 {% for img in site.data.header_images %}
