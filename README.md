@@ -16,7 +16,7 @@ Everything below is the site's technical infrastructure. You shouldn't need to t
 
 - **`framework/`** — Jekyll layouts, includes, and Sass stylesheets.
 - **`_config.yml`** — main Jekyll configuration (site URL, theme settings, build options).
-- **`_config_dev.yml`** — overrides for local development (run with `jekyll serve --config _config.yml,_config_dev.yml`).
+- **`_config_dev.yml`** — overrides for local development (run with `jekyll serve --config _config.yml,_config_dev.yml`). When running locally, visit [http://localhost:4000/header-preview/](http://localhost:4000/header-preview/) to browse and preview available masthead header images.
 - **`_data/navigation.yml`** — site navigation menu structure.
 - **`Gemfile`** / **`Gemfile.lock`** — Ruby gem dependencies for building the site.
 - **`jekyll-theme-feeling-responsive.gemspec`** — gem specification for the theme.
