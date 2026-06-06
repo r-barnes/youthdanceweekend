@@ -1,7 +1,7 @@
 ---
 layout              : page
 title               : "About Youth Dance Weekend Organization"
-meta_title          : "View our policies for the weekend"
+meta_title          : "About"
 # subheadline         : "Contact Form"
 # teaser              : "Get in touch with me? Use the contact form."
 header:
