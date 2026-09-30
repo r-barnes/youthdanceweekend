@@ -1,5 +1,20 @@
 # YDW Name Tags
 
+Two steps. `nametags.py` turns the master sheet into a clean roster CSV;
+`buttons.py` lays that roster onto a designed button and exports print-ready
+PDF. `make_template.py` generates a skeleton design to start from.
+
+```
+master sheet (.ods)
+      |  nametags.py          -> data/nametags-2026.csv   (FirstName, LastName, Pronouns)
+      |
+      +  button-template.svg  (your Inkscape design)
+      |
+      v  buttons.py           -> data/print-2026/buttons-all.pdf
+```
+
+---
+
 `nametags.py` turns the master sheet into the mail-merge file for name-tag
 buttons: it keeps everyone who is actually attending, applies each person's
 preferred tag name, tidies the pronouns, and writes three columns —
@@ -113,3 +128,113 @@ of 161 until two people pick up the same button.
   its own "different name for tag" column, left over from a previous year. The
   script ignores it. Delete it or wire it in, but don't let it sit there looking
   authoritative.
+
+
+---
+
+# Buttons
+
+## The design is an SVG you own
+
+`buttons.py` never hardcodes a position, size or font. It reads them off your
+Inkscape file. The entire contract is three named text objects:
+
+| id | what it is |
+| --- | --- |
+| `firstname` | styled how you want it; its font-size is the **maximum** |
+| `lastname` | same |
+| `pronouns` | same |
+| `firstname-box` *(optional)* | a rect marking the area the first name may fill |
+
+In Inkscape: select the text, **Object Properties** (`Ctrl+Shift+O`), set **ID**.
+A layer labelled `guides` is dropped from the output, so put cut lines and box
+outlines there. Everything else — artwork, decorative text, colours, fonts — is
+copied through untouched.
+
+To start from scratch:
+
+```bash
+./make_template.py                                # 68mm button, 58mm safe zone
+./make_template.py --first-size 11 --paper a4
+```
+
+The defaults match the press: **68mm footprint, 58mm safe zone**, which should
+hold year to year. Text is fitted inside the safe zone, not the full circle.
+
+It prints the grid that falls out of the geometry, which you paste into
+`buttons.py`'s CONFIG:
+
+```
+  button    68.0mm visible, 68.0mm footprint, 58.0mm safe zone
+  letter @ 10.0mm margin -> 2 x 3 = 6 per sheet
+  161 buttons -> 27 sheets
+```
+
+**Margin is worth a moment.** Three 68mm circles need 204mm of a 215.9mm page,
+so the column count falls off a cliff at 5.95mm:
+
+| Margin | Per sheet | Sheets for 161 |
+| --- | --- | --- |
+| 6mm and up | 6 | 27 |
+| 5.9mm or less | 9 | **18** |
+
+A third fewer sheets, but 5mm margins are inside some printers' unprintable
+area and would clip the artwork. Worth a single test page before committing.
+
+## How a name is fitted
+
+1. **Measure**, don't count characters. One Inkscape `--query-all` call returns
+   the true rendered width of every name in the real font. In a proportional
+   face a 12-character name can be narrower than a 9-character one.
+2. **Full size** if it fits the box. For 2026 that is 155 of 161 buttons.
+3. **Shrink** to the largest size that fits, never below `MIN_SCALE`. Names are
+   not broken across lines.
+4. Anything that would need to go below the floor is set **at** the floor and
+   flagged loudly — it prints, but you were told.
+
+For 2026 that leaves **157 of 161 at full size**, and four shrunk between 87%
+and 98% — small enough that the stack still reads as one set.
+
+`WRAP_BEFORE_SHRINK = True` switches to breaking multi-word names across two
+lines instead, keeping one uniform size. If you use it, give the design headroom
+*above* the first name: extra lines stack upward, and the script warns when a
+wrapped block is taller than its box.
+
+## Proofs
+
+Every run writes two PDFs worth looking at before committing 27 sheets to paper:
+
+- `proof-button.pdf` — one button at 1:1, to hold against a physical blank
+- `proof-worst.pdf` — a sheet of only the names that needed wrapping or shrinking
+
+These exist because the failure mode is subtle. An early version centred wrapped
+names on their baseline, which pushed the second line straight through the last
+name; nothing in the report said so, and the proof made it obvious at a glance.
+
+## Printing
+
+**100% scale, "fit to page" OFF.** Any scaling breaks registration with the
+punch and ruins the run.
+
+## CONFIG
+
+| Setting | What it does |
+| --- | --- |
+| `CSV_PATH` | Roster from `nametags.py`. |
+| `TEMPLATE` | Your design SVG. |
+| `OUT_DIR` | Where sheets and proofs land — **bump the year**. |
+| `PAPER`, `MARGIN_MM`, `COLS`, `ROWS` | Sheet grid; `make_template.py` prints these. |
+| `MIN_SCALE` | How far a name may shrink before it is a problem. |
+| `WRAP_BEFORE_SHRINK` | `False` (default) shrinks; `True` breaks names across lines. |
+| `LINE_SPACING` | Leading between wrapped lines. |
+
+## Notes
+
+- **Fonts must be installed on the rendering machine.** If the design uses a font
+  you do not have, Inkscape substitutes silently and every measurement and line
+  break shifts. Get the font file along with the SVG.
+- **Requires** Inkscape (measurement + PDF export) and `pdfunite` from poppler
+  (stitching sheets). Both were already on this machine.
+- **Buttons come out in roster order**, which is the master sheet's order and only
+  partly alphabetical. If you want them sorted for check-in, that is a small
+  change to `nametags.py`.
