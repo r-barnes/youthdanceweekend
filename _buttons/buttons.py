@@ -109,6 +109,36 @@ def style_value(el, prop):
     return el.get(prop)
 
 
+FONT_ATTRS = ('font-family', 'font-size', 'font-weight', 'font-stretch', 'font-style')
+
+
+def _collect_style(el, into):
+    """Presentation attributes first, then style="" -- style wins, as in CSS."""
+    for attr in FONT_ATTRS:
+        if el.get(attr):
+            into[attr] = el.get(attr)
+    for part in (el.get('style') or '').split(';'):
+        if ':' in part:
+            key, value = part.split(':', 1)
+            into[key.strip()] = value.strip()
+
+
+def effective_style(el):
+    """The style a text object actually renders with.
+
+    Inkscape writes the chosen face on the <tspan>, not the <text>: a heading
+    can say font-weight:900 on the element while its tspan says 600, and the
+    tspan is what you see. Reading only the <text> picks the wrong face.
+    """
+    merged = {}
+    _collect_style(el, merged)
+    for child in el:
+        if child.tag == f'{{{SVG}}}tspan':
+            _collect_style(child, merged)
+            break
+    return merged
+
+
 def mm_length(value):
     """A document width/height in mm. A bare number means px, not mm."""
     if value is None:
@@ -195,7 +225,8 @@ def read_template(path):
                 f"(Ctrl+Shift+O), fill in ID or Label, then SAVE\n"
                 f"  or point FIELD_IDS[{field!r}] at one of these:\n    "
                 + '\n    '.join(texts or ['(no text objects)']))
-        size = to_units(style_value(text_el, 'font-size'))
+        eff = effective_style(text_el)
+        size = to_units(eff.get('font-size'))
         if not size:
             die(f"{path}: id={oid!r} has no readable font-size")
         size *= scale                     # user units -> mm
@@ -221,7 +252,10 @@ def read_template(path):
             'max_size': size,
             'box_w': width,
             'box_h': geom[f'{oid}-box'][3] if f'{oid}-box' in geom else None,
-            'family': style_value(text_el, 'font-family') or 'sans-serif',
+            'family': eff.get('font-family', 'sans-serif'),
+            'weight': eff.get('font-weight'),
+            'stretch': eff.get('font-stretch'),
+            'style': eff.get('font-style'),
         }
     return tree, spec, doc_w, doc_h, scale
 
@@ -247,11 +281,13 @@ def measure(strings_by_field, spec, workdir):
                 continue
             i = len(items)
             items.append((field, text))
+            css = f'font-family:{s["family"]};font-size:{s["max_size"]}px'
+            for prop in ('weight', 'stretch', 'style'):
+                if s.get(prop):
+                    css += f';font-{prop}:{s[prop]}'
             parts.append(
                 f'<text id="m{i}" x="5" y="{(i + 1) * 20}" '
-                f'font-family="{esc_attr(s["family"])}" font-size="{s["max_size"]}" '
-                f'style="font-family:{esc_attr(s["family"])};font-size:{s["max_size"]}px">'
-                f'{esc(text)}</text>')
+                f'style="{esc_attr(css)}">{esc(text)}</text>')
     parts.append('</svg>')
 
     probe = os.path.join(workdir, 'measure.svg')
@@ -369,12 +405,14 @@ def set_text(el, lines, size_user):
     if el.get('font-size') is not None:
         el.set('font-size', f'{size_user:.4f}')
 
-    x, y = el.get('x'), el.get('y')
+    x, y, proto = el.get('x'), el.get('y'), None
     for child in el:                       # Inkscape often keeps x/y on the tspan
         if x is None:
             x = child.get('x')
         if y is None:
             y = child.get('y')
+        if proto is None and child.tag == f'{{{SVG}}}tspan':
+            proto = child.get('style')     # the face actually being rendered
     lead = size_user * LINE_SPACING
     y0 = float(y) - lead * (len(lines) - 1) if y is not None else None
 
@@ -383,6 +421,12 @@ def set_text(el, lines, size_user):
     el.text = None
     for i, line in enumerate(lines):
         ts = ET.SubElement(el, f'{{{SVG}}}tspan')
+        if proto:
+            # Carry the original tspan's styling onto the replacement, or the
+            # text drops back to the <text> element's weight -- which is not
+            # the one the designer picked.
+            ts.set('style', proto)
+            set_style_prop(ts, 'font-size', f'{size_user:.4f}px')
         if x is not None:
             ts.set('x', x)
         if y0 is not None:
@@ -510,6 +554,9 @@ def main():
                 wanted[field].add(' '.join(words[:i]))
                 wanted[field].add(' '.join(words[i:]))
     widths = measure(wanted, spec, args.out_dir)
+    probe = os.path.join(args.out_dir, 'measure.svg')
+    if os.path.exists(probe):
+        os.remove(probe)                  # scratch file from the measuring pass
 
     layouts, notes = [], []
     for r in people:
@@ -571,9 +618,6 @@ def main():
     svg_to_pdf(sheets, out_pdf, args.out_dir)
     for s in sheets:
         os.remove(s)
-    probe = os.path.join(args.out_dir, 'measure.svg')
-    if os.path.exists(probe):
-        os.remove(probe)                  # scratch file from the measuring pass
     print(f"\nwrote {out_pdf} ({len(sheets)} sheets)", file=sys.stderr)
     print("print at 100% scale -- 'fit to page' will break registration with the punch",
           file=sys.stderr)
