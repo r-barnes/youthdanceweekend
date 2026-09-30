@@ -15,6 +15,7 @@ Usage:
     ./buttons.py --proof          # just the 1:1 single-button and worst-case proofs
 """
 import argparse
+import base64
 import copy
 import csv
 import math
@@ -76,6 +77,13 @@ MIN_SCALE = 0.62
 WRAP_BEFORE_SHRINK = False
 LINE_SPACING = 1.05          # multiple of font size between wrapped lines
 
+# Inkscape's PDF backend flattens a masked object at PDF user-space resolution
+# -- 72 dpi -- no matter what --export-dpi says, which leaves raster artwork
+# visibly stair-stepped. Masked images are pre-rendered at this resolution
+# instead, with the mask baked into the alpha channel, so the PDF carries a
+# plain high-resolution image and no mask. 0 disables the whole step.
+FLATTEN_MASKS_DPI = 300
+
 INKSCAPE = '/Applications/Inkscape.app/Contents/MacOS/inkscape'
 PDFUNITE = 'pdfunite'
 
@@ -90,6 +98,7 @@ FIELDS = ('firstname', 'lastname', 'pronouns')
 ET.register_namespace('', SVG)
 ET.register_namespace('inkscape', INK_NS)
 ET.register_namespace('sodipodi', 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd')
+ET.register_namespace('xlink', 'http://www.w3.org/1999/xlink')
 
 
 def die(msg):
@@ -179,6 +188,119 @@ def template_geometry(path):
             except ValueError:
                 continue
     return geom
+
+
+def parse_transform(text):
+    """An SVG transform list as a 2x3 affine (a, b, c, d, e, f)."""
+    m = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
+    for name, args in re.findall(r'(\w+)\s*\(([^)]*)\)', text or ''):
+        v = [float(x) for x in re.split(r'[,\s]+', args.strip()) if x]
+        if name == 'matrix' and len(v) == 6:
+            t = tuple(v)
+        elif name == 'translate':
+            t = (1, 0, 0, 1, v[0], v[1] if len(v) > 1 else 0)
+        elif name == 'scale':
+            t = (v[0], 0, 0, v[1] if len(v) > 1 else v[0], 0, 0)
+        elif name == 'rotate' and len(v) == 1:
+            r = math.radians(v[0])
+            t = (math.cos(r), math.sin(r), -math.sin(r), math.cos(r), 0, 0)
+        else:
+            continue                       # skew/rotate-about-point: rare here
+        m = mat_mul(m, t)
+    return m
+
+
+def mat_mul(m, n):
+    a, b, c, d, e, f = m
+    A, B, C, D, E, F = n
+    return (a*A + c*B, b*A + d*B, a*C + c*D, b*C + d*D, a*E + c*F + e, b*E + d*F + f)
+
+
+def mat_inv(m):
+    a, b, c, d, e, f = m
+    det = a * d - b * c
+    if abs(det) < 1e-12:
+        return None
+    return (d/det, -b/det, -c/det, a/det, (c*f - d*e)/det, (b*e - a*f)/det)
+
+
+def flatten_masked_images(tree, path, dpi, workdir):
+    """Replace every masked <image> with a pre-rendered one, mask baked in.
+
+    Returns how many were replaced. Each is rendered on its own, over the full
+    page, so the result drops straight back in at page coordinates -- no
+    guessing where a clipped bounding box ended up.
+    """
+    if not dpi:
+        return 0
+    root = tree.getroot()
+    parent_of = {child: parent for parent in root.iter() for child in parent}
+    targets = [el for el in root.iter(f'{{{SVG}}}image')
+               if el.get('mask') or el.get('clip-path')]
+    if not targets:
+        return 0
+
+    vb = (root.get('viewBox') or '').replace(',', ' ').split()
+    page_w, page_h = (float(vb[2]), float(vb[3])) if len(vb) == 4 else (0, 0)
+    if not page_w:
+        return 0
+
+    done = 0
+    for n, target in enumerate(targets):
+        chain = []                         # root -> ... -> target
+        node = target
+        while node in parent_of:
+            chain.append(node)
+            node = parent_of[node]
+        chain.reverse()
+
+        # A copy of the document holding only this image and its ancestors, so
+        # the render is the image alone, masked, with every transform applied.
+        solo = ET.Element(root.tag, dict(root.attrib))
+        for defs in root.iter(f'{{{SVG}}}defs'):
+            solo.append(copy.deepcopy(defs))
+        cursor = solo
+        for link in chain[:-1]:
+            shell = ET.SubElement(cursor, link.tag, dict(link.attrib))
+            cursor = shell
+        cursor.append(copy.deepcopy(target))
+
+        solo_path = os.path.join(workdir, f'_mask{n}.svg')
+        png_path = os.path.join(workdir, f'_mask{n}.png')
+        ET.ElementTree(solo).write(solo_path, encoding='utf-8', xml_declaration=True)
+        run([INKSCAPE, solo_path, '--export-area-page', '--export-type=png',
+             f'--export-dpi={dpi}', f'--export-filename={png_path}'],
+            "pre-rendering masked artwork")
+        if not os.path.exists(png_path):
+            continue
+
+        with open(png_path, 'rb') as f:
+            data = base64.b64encode(f.read()).decode('ascii')
+
+        # Put it back exactly where it was in the stacking order, undoing the
+        # ancestors' transforms so page coordinates land on the page.
+        accum = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
+        for link in chain[:-1]:
+            accum = mat_mul(accum, parse_transform(link.get('transform')))
+        inv = mat_inv(accum)
+        if inv is None:
+            continue
+
+        flat = ET.Element(f'{{{SVG}}}image', {
+            'x': '0', 'y': '0',
+            'width': f'{page_w:.6f}', 'height': f'{page_h:.6f}',
+            'preserveAspectRatio': 'none',
+            'style': 'image-rendering:optimizeQuality',
+            'transform': 'matrix({:.9f},{:.9f},{:.9f},{:.9f},{:.9f},{:.9f})'.format(*inv),
+            '{http://www.w3.org/1999/xlink}href': f'data:image/png;base64,{data}',
+        })
+        holder = parent_of[target]
+        holder.insert(list(holder).index(target), flat)
+        holder.remove(target)
+        os.remove(solo_path)
+        os.remove(png_path)
+        done += 1
+    return done
 
 
 def read_template(path):
@@ -460,6 +582,14 @@ def button_group(tree, spec, layout, scale):
             continue
         g.append(copy.deepcopy(layer))
 
+    for image in g.iter(f'{{{SVG}}}image'):
+        # A design that came through a PDF or AI import carries
+        # image-rendering:optimizeSpeed, which tells the renderer to skip
+        # interpolation -- the artwork prints visibly jagged. Nothing is lost
+        # by asking for quality instead, and it is the single biggest
+        # difference in how the embedded artwork comes out.
+        set_style_prop(image, 'image-rendering', 'optimizeQuality')
+
     for field in FIELDS:
         el = find_by_key(g, spec[field]['id'])
         if el is None:
@@ -539,6 +669,11 @@ def main():
         die(f"no rows in {args.csv}")
 
     os.makedirs(args.out_dir, exist_ok=True)
+
+    flattened = flatten_masked_images(tree, args.template, FLATTEN_MASKS_DPI, args.out_dir)
+    if flattened:
+        print(f"pre-rendered {flattened} masked image(s) at {FLATTEN_MASKS_DPI}dpi "
+              f"so the PDF keeps them sharp", file=sys.stderr)
 
     # Every string plus every prefix/suffix a wrap could produce, measured once.
     wanted = {field: set() for field in FIELDS}

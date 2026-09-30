@@ -235,6 +235,29 @@ These exist because the failure mode is subtle. An early version centred wrapped
 names on their baseline, which pushed the second line straight through the last
 name; nothing in the report said so, and the proof made it obvious at a glance.
 
+## Image quality
+
+If the design's artwork is a raster image with transparency — which is what a
+PDF or Illustrator import produces — two things quietly wreck it on the way to
+PDF, and both are handled automatically:
+
+1. **`image-rendering:optimizeSpeed`.** Imports carry this, and it tells the
+   renderer to skip interpolation. The artwork prints visibly jagged. It is
+   rewritten to `optimizeQuality`.
+2. **Masked images flatten at 72 dpi.** Inkscape's PDF backend rasterises a
+   masked object at PDF user-space resolution regardless of `--export-dpi`
+   (tested: the flag, the actions API, and rewriting the image geometry all
+   change nothing). So masked images are pre-rendered at `FLATTEN_MASKS_DPI`
+   with the mask baked into the alpha channel, and the PDF gets a plain
+   high-resolution image with no mask at all.
+
+The difference is not subtle — before, artwork edges were stair-stepped at
+roughly 72 dpi while the vector text beside them was perfectly smooth.
+
+`pdfimages -list data/print-2026/buttons-all.pdf` is the way to check: every
+image should report 300 ppi or better. The cost is file size, since each button
+carries its own copy — about 7 MB at 300 dpi, 18 MB at 600.
+
 ## Printing
 
 **100% scale, "fit to page" OFF.** Any scaling breaks registration with the
@@ -251,6 +274,7 @@ punch and ruins the run.
 | `FIELD_IDS` | Which object in the design holds each field. |
 | `UPPERCASE` | `True` if the design sets names in capitals. |
 | `SAFE_DIAMETER_MM` | The press's safe zone, used when there is no `-box` rect. |
+| `FLATTEN_MASKS_DPI` | Resolution for pre-rendering masked artwork; `0` disables. |
 | `MIN_SCALE` | How far a name may shrink before it is a problem. |
 | `WRAP_BEFORE_SHRINK` | `False` (default) shrinks; `True` breaks names across lines. |
 | `LINE_SPACING` | Leading between wrapped lines. |
