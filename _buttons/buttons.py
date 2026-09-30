@@ -57,10 +57,15 @@ TEMPLATE = './data/2026-button-reference-inkscape.svg'
 OUT_DIR = './data/print-2026'
 
 # Sheet layout. make_template.py prints these for a given button and paper.
+# 3x4 on Letter is the standard 58mm-badge layout (template makers quote 12
+# per A4 for the same circle). It leaves ~6mm side and ~3.7mm top/bottom
+# margins, which is tighter than most printers' unprintable area -- but what
+# gets clipped there is the outer ring of bleed that wraps around the back of
+# the badge, not the 58mm face, so it does not show on the finished button.
 PAPER = 'letter'
-MARGIN_MM = 10.0
-COLS = 2
-ROWS = 3
+MARGIN_MM = 3.7
+COLS = 3
+ROWS = 4
 
 # The press's safe zone. When the design has no <field>-box rect, text is fitted
 # to the chord of this circle at the text's own height, so a plain design --
@@ -616,8 +621,14 @@ def write_sheet(path, groups, tree, doc_w, doc_h, scale):
         root.append(copy.deepcopy(defs))
         break
     # Spread the slack evenly rather than crowding everything into a corner.
-    gap_x = (pw - 2 * MARGIN_MM - COLS * doc_w) / max(COLS - 1, 1) if COLS > 1 else 0
-    gap_y = (ph - 2 * MARGIN_MM - ROWS * doc_h) / max(ROWS - 1, 1) if ROWS > 1 else 0
+    slack_x = pw - 2 * MARGIN_MM - COLS * doc_w
+    slack_y = ph - 2 * MARGIN_MM - ROWS * doc_h
+    if slack_x < -0.01 or slack_y < -0.01:
+        die(f"{COLS}x{ROWS} buttons of {doc_w:.1f}mm do not fit {PAPER} at "
+            f"{MARGIN_MM}mm margins (short by "
+            f"{max(-slack_x, 0):.1f}mm across, {max(-slack_y, 0):.1f}mm down)")
+    gap_x = slack_x / max(COLS - 1, 1) if COLS > 1 else 0
+    gap_y = slack_y / max(ROWS - 1, 1) if ROWS > 1 else 0
     for i, g in enumerate(groups):
         col, row = i % per_row, i // per_row
         x = MARGIN_MM + col * (doc_w + gap_x)

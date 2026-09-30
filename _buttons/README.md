@@ -192,16 +192,24 @@ It prints the grid that falls out of the geometry, which you paste into
   161 buttons -> 27 sheets
 ```
 
-**Margin is worth a moment.** Three 68mm circles need 204mm of a 215.9mm page,
-so the column count falls off a cliff at 5.95mm:
+**Twelve per sheet is the standard layout**, not a stunt: 3x4 on Letter, which
+is what badge template makers quote for this circle (they say 12 per A4, same
+geometry). Three 68mm circles need 204mm of a 215.9mm page and four need 272mm
+of 279.4mm, leaving about 6mm side and 3.7mm top/bottom margins.
 
-| Margin | Per sheet | Sheets for 161 |
-| --- | --- | --- |
-| 6mm and up | 6 | 27 |
-| 5.9mm or less | 9 | **18** |
+| Paper | Circle | Grid | Per sheet | Sheets for 161 |
+| --- | --- | --- | --- | --- |
+| Letter | 68mm | 3x4 | **12** | 14 |
+| A4 | 68mm | 3x4 | 12 | 14 |
+| Letter | 70mm | 3x3 | 9 | 18 |
 
-A third fewer sheets, but 5mm margins are inside some printers' unprintable
-area and would clip the artwork. Worth a single test page before committing.
+3.7mm is tighter than many printers' unprintable area, and that is fine here:
+what gets clipped at the page edge is the outer ring of **bleed that wraps
+around the back of the badge**, not the 58mm face. Losing a fraction of a
+millimetre of it is invisible on the finished button. Still worth one test page.
+
+`buttons.py` refuses to run if the grid does not actually fit, rather than
+quietly overlapping them.
 
 ## How a name is fitted
 
