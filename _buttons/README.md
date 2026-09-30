@@ -1,21 +1,23 @@
-# YDW Name Tags
+# YDW Buttons
 
-Two steps. `nametags.py` turns the master sheet into a clean roster CSV;
-`buttons.py` lays that roster onto a designed button and exports print-ready
-PDF. `make_template.py` generates a skeleton design to start from.
+Two steps. `roster.py` works out who is coming and what goes on their button;
+`buttons.py` lays that onto the design and exports print-ready PDF.
+`make_template.py` generates a skeleton design to start from, if you ever need
+one.
 
 ```
-master sheet (.ods)
-      |  nametags.py          -> data/nametags-2026.csv   (FirstName, LastName, Pronouns)
-      |
-      +  button-template.svg  (your Inkscape design)
-      |
-      v  buttons.py           -> data/print-2026/buttons-all.pdf
+  master sheet (.ods)
+        |
+        |  ./roster.py   -> data/roster-2026.csv   (FirstName, LastName, Pronouns)
+        |
+        +  the Inkscape design  (data/*.svg)
+        |
+        v  ./buttons.py  -> data/print-2026/buttons-all.pdf  + two proofs
 ```
 
 ---
 
-`nametags.py` turns the master sheet into the mail-merge file for name-tag
+`roster.py` turns the master sheet into the name list for the buttons
 buttons: it keeps everyone who is actually attending, applies each person's
 preferred tag name, tidies the pronouns, and writes three columns —
 **FirstName, LastName, Pronouns**.
@@ -25,9 +27,9 @@ library, no dependencies, no `pip install`. It reads the `.ods` workbook
 directly, so there is no export-to-CSV step.
 
 ```bash
-./nametags.py              # write data/nametags-2026.csv, print the validation report
-./nametags.py --dry-run    # print the tags to read through, write nothing
-./nametags.py --report     # just the report: what to fix before printing
+./roster.py              # write data/roster-2026.csv, print the validation report
+./roster.py --dry-run    # print the tags to read through, write nothing
+./roster.py --report     # just the report: what to fix before printing
 ```
 
 ---
@@ -281,7 +283,7 @@ punch and ruins the run.
 
 | Setting | What it does |
 | --- | --- |
-| `CSV_PATH` | Roster from `nametags.py`. |
+| `CSV_PATH` | Roster from `roster.py`. |
 | `TEMPLATE` | Your design SVG. |
 | `OUT_DIR` | Where sheets and proofs land — **bump the year**. |
 | `PAPER`, `MARGIN_MM`, `COLS`, `ROWS` | Sheet grid; `make_template.py` prints these. |
@@ -302,4 +304,4 @@ punch and ruins the run.
   (stitching sheets). Both were already on this machine.
 - **Buttons come out in roster order**, which is the master sheet's order and only
   partly alphabetical. If you want them sorted for check-in, that is a small
-  change to `nametags.py`.
+  change to `roster.py`.

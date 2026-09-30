@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Lay out name-tag buttons from a design template and print-ready PDF.
 
-Takes the mail-merge CSV from nametags.py plus an Inkscape design whose text
+Takes the mail-merge CSV from roster.py plus an Inkscape design whose text
 objects are named firstname / lastname / pronouns, fits every name into the
 design's own text boxes, tiles the button N-up onto sheets and exports one PDF.
 
@@ -37,7 +37,7 @@ except Exception:  # pragma: no cover -- Homebrew 3.14 ships a broken pyexpat
 # CONFIG — edit this each year to match the new design and press.
 # ---------------------------------------------------------------------------
 
-CSV_PATH = './data/nametags-2026.csv'
+CSV_PATH = './data/roster-2026.csv'
 
 # Which object in the design holds each field. Rename the objects in Inkscape
 # (Object Properties, Ctrl+Shift+O) or just point these at the ids the design
@@ -675,7 +675,7 @@ def main():
     if not os.path.exists(INKSCAPE):
         die(f"Inkscape not found at {INKSCAPE}")
     if not os.path.exists(args.csv):
-        die(f"CSV not found: {args.csv}\n  run ./nametags.py first")
+        die(f"CSV not found: {args.csv}\n  run ./roster.py first")
 
     tree, spec, doc_w, doc_h, scale = read_template(args.template)
     with open(args.csv, newline='', encoding='utf-8-sig') as f:

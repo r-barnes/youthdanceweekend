@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""YDW name-tag list.
+"""YDW button roster: who is coming, and what goes on their button.
 
-Reads the master sheet, keeps everyone who is actually attending, and writes a
-three-column CSV -- FirstName, LastName, Pronouns -- ready for a mail merge onto
-name tags. Everything year-specific lives in the CONFIG block below; the
-machinery underneath does not change year to year.
+Reads the master sheet, keeps everyone who is actually attending, resolves the
+name each person wants on their tag, and writes a three-column CSV --
+FirstName, LastName, Pronouns -- for buttons.py to lay out. Everything
+year-specific lives in the CONFIG block below; the machinery underneath does
+not change year to year.
 
 Usage:
-    ./nametags.py               # write the CSV, print a validation report
-    ./nametags.py --dry-run     # print the rows, write nothing
-    ./nametags.py --report      # validation report only (no rows, no file)
+    ./roster.py               # write the CSV, print a validation report
+    ./roster.py --dry-run     # print the rows, write nothing
+    ./roster.py --report      # validation report only (no rows, no file)
 """
 import argparse
 import csv
@@ -48,7 +49,7 @@ SHEET = 'YDW all spreadsheets'
 # Where the mail-merge file lands. Kept in data/, which is gitignored -- this
 # repo's published branch is gh-pages, so a roster of real names must not be
 # committed. The directory is created if it does not exist.
-OUTPUT = './data/nametags-2026.csv'
+OUTPUT = './data/roster-2026.csv'
 
 # Columns. Every one of these must exist in the sheet or the run aborts.
 COL_ROLE = 'Role Status'
