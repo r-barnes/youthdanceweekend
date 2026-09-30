@@ -52,7 +52,7 @@ FIELD_IDS = {
 # wider, so turning this on means more names get shrunk.
 UPPERCASE = True
 
-TEMPLATE = './data/2026-button-reference.svg'
+TEMPLATE = './data/2026-button-reference-inkscape.svg'
 OUT_DIR = './data/print-2026'
 
 # Sheet layout. make_template.py prints these for a given button and paper.
@@ -571,6 +571,9 @@ def main():
     svg_to_pdf(sheets, out_pdf, args.out_dir)
     for s in sheets:
         os.remove(s)
+    probe = os.path.join(args.out_dir, 'measure.svg')
+    if os.path.exists(probe):
+        os.remove(probe)                  # scratch file from the measuring pass
     print(f"\nwrote {out_pdf} ({len(sheets)} sheets)", file=sys.stderr)
     print("print at 100% scale -- 'fit to page' will break registration with the punch",
           file=sys.stderr)
