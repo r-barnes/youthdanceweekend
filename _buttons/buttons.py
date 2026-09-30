@@ -769,7 +769,7 @@ def main():
     for s in sheets:
         os.remove(s)
     print(f"\nwrote {out_pdf} ({len(sheets)} sheets)", file=sys.stderr)
-    print("print at 100% scale -- 'fit to page' will break registration with the punch",
+    print("print at 100% scale -- 'fit to page' rescales the circles and the cutter will not line up",
           file=sys.stderr)
 
 
