@@ -192,21 +192,27 @@ It prints the grid that falls out of the geometry, which you paste into
   161 buttons -> 27 sheets
 ```
 
-**Twelve per sheet is the standard layout**, not a stunt: 3x4 on Letter, which
-is what badge template makers quote for this circle (they say 12 per A4, same
-geometry). Three 68mm circles need 204mm of a 215.9mm page and four need 272mm
-of 279.4mm, leaving about 6mm side and 3.7mm top/bottom margins.
+**The layout is chosen for the cutter, not for density.** Three 68mm circles
+use 204mm of the 215.9mm width, so columns touch no matter what. Rows are the
+free variable:
 
-| Paper | Circle | Grid | Per sheet | Sheets for 161 |
+| Grid | Per sheet | Row gap | Sheets for 161 | Good for |
 | --- | --- | --- | --- | --- |
-| Letter | 68mm | 3x4 | **12** | 14 |
-| A4 | 68mm | 3x4 | 12 | 14 |
-| Letter | 70mm | 3x3 | 9 | 18 |
+| 3x3 | **9** | ~32mm | 18 | **a hand rotary cutter** — trim to strips first |
+| 3x4 | 12 | 0mm | 14 | a press punch, cutting straight from the sheet |
 
-3.7mm is tighter than many printers' unprintable area, and that is fine here:
-what gets clipped at the page edge is the outer ring of **bleed that wraps
-around the back of the badge**, not the 58mm face. Losing a fraction of a
-millimetre of it is invisible on the finished button. Still worth one test page.
+3x4 is what badge template makers quote (12 per A4, same circle) and it saves
+four sheets. But the rows touch, so there is nowhere to run a straight cut,
+and with a hand-cranked rotary cutter you want strips: a strip is far easier
+to align a centering template on than a whole sheet, and it stays rigid as
+circles come out of it.
+
+Either way the margins are tight, and that is fine: what gets clipped at a
+page edge is the outer ring of **bleed that wraps around the back of the
+badge**, not the 58mm face. The same forgiveness covers aiming the cutter —
+there is ~5mm of bleed between the 68mm cut and the 58mm face, so being a
+millimetre or two off centre still leaves the face whole, and only nibbles a
+neighbour's hidden wrap.
 
 `buttons.py` refuses to run if the grid does not actually fit, rather than
 quietly overlapping them.

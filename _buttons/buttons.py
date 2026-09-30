@@ -57,15 +57,19 @@ TEMPLATE = './data/2026-button-reference-inkscape.svg'
 OUT_DIR = './data/print-2026'
 
 # Sheet layout. make_template.py prints these for a given button and paper.
-# 3x4 on Letter is the standard 58mm-badge layout (template makers quote 12
-# per A4 for the same circle). It leaves ~6mm side and ~3.7mm top/bottom
-# margins, which is tighter than most printers' unprintable area -- but what
-# gets clipped there is the outer ring of bleed that wraps around the back of
-# the badge, not the 58mm face, so it does not show on the finished button.
+# 3x3 on Letter, laid out for a hand-cranked rotary circle cutter rather than
+# for maximum density. Three 68mm circles use 204mm of the 215.9mm width, so
+# the columns end up touching whatever we do -- but only three rows leaves
+# ~32mm between them, which is room to trim the sheet into strips first. A
+# strip is far easier to align a centering template on than a whole sheet, and
+# it stays rigid as circles come out of it.
+#
+# 3x4 = 12 also fits (badge template makers quote 12 per A4 for this circle)
+# and saves four sheets, but the rows touch, so there is nowhere to cut strips.
 PAPER = 'letter'
-MARGIN_MM = 3.7
+MARGIN_MM = 5.9
 COLS = 3
-ROWS = 4
+ROWS = 3
 
 # The press's safe zone. When the design has no <field>-box rect, text is fitted
 # to the chord of this circle at the text's own height, so a plain design --
