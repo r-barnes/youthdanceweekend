@@ -146,10 +146,32 @@ Inkscape file. The entire contract is three named text objects:
 | `pronouns` | same |
 | `firstname-box` *(optional)* | a rect marking the area the first name may fill |
 
-In Inkscape: select the text, **Object Properties** (`Ctrl+Shift+O`), set **ID**.
+In Inkscape: select the text, **Object Properties** (`Ctrl+Shift+O`), and fill
+in **ID** *or* **Label** — either works.
+
+> **Save as "Inkscape SVG", or use the ID field.** Exporting as *Plain SVG* or
+> *Optimized SVG* strips the entire `inkscape:` namespace, and **Label** lives
+> there — it is silently deleted, while **ID** survives every format. If the
+> script says nothing has that id or label, this is almost always why.
+
 A layer labelled `guides` is dropped from the output, so put cut lines and box
-outlines there. Everything else — artwork, decorative text, colours, fonts — is
-copied through untouched.
+outlines there. Everything else — artwork, embedded images, curved text on a
+path, nested groups with their own transforms — is copied through untouched.
+
+Don't want to rename anything? Point `FIELD_IDS` at whatever ids the design
+already has:
+
+```python
+FIELD_IDS = {'firstname': 'text42', 'lastname': 'text42-9', 'pronouns': 'text42-9-6'}
+```
+
+**Units take care of themselves.** Inkscape files are usually in px even when the
+document is sized in mm; the script reads the real scale from the `viewBox` and
+converts, so the design's unit choice does not matter.
+
+**If the design sets names in capitals**, set `UPPERCASE = True`. The roster is
+mixed case, so this is a property of the design, not the data. Capitals are
+wider, so expect more names to shrink.
 
 To start from scratch:
 
@@ -192,8 +214,10 @@ area and would clip the artwork. Worth a single test page before committing.
 4. Anything that would need to go below the floor is set **at** the floor and
    flagged loudly — it prints, but you were told.
 
-For 2026 that leaves **157 of 161 at full size**, and four shrunk between 87%
-and 98% — small enough that the stack still reads as one set.
+How many get shrunk depends entirely on the design's first-name size. On the
+2026 design, set in capitals, that is **148 of 161 at full size** and 13 shrunk,
+the worst around 62%. If too many are shrinking, the lever is the design: lower
+the first name's font size a little and more names clear it untouched.
 
 `WRAP_BEFORE_SHRINK = True` switches to breaking multi-word names across two
 lines instead, keeping one uniform size. If you use it, give the design headroom
@@ -224,6 +248,9 @@ punch and ruins the run.
 | `TEMPLATE` | Your design SVG. |
 | `OUT_DIR` | Where sheets and proofs land — **bump the year**. |
 | `PAPER`, `MARGIN_MM`, `COLS`, `ROWS` | Sheet grid; `make_template.py` prints these. |
+| `FIELD_IDS` | Which object in the design holds each field. |
+| `UPPERCASE` | `True` if the design sets names in capitals. |
+| `SAFE_DIAMETER_MM` | The press's safe zone, used when there is no `-box` rect. |
 | `MIN_SCALE` | How far a name may shrink before it is a problem. |
 | `WRAP_BEFORE_SHRINK` | `False` (default) shrinks; `True` breaks names across lines. |
 | `LINE_SPACING` | Leading between wrapped lines. |

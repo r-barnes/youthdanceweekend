@@ -37,7 +37,22 @@ except Exception:  # pragma: no cover -- Homebrew 3.14 ships a broken pyexpat
 # ---------------------------------------------------------------------------
 
 CSV_PATH = './data/nametags-2026.csv'
-TEMPLATE = './data/button-template.svg'
+
+# Which object in the design holds each field. Rename the objects in Inkscape
+# (Object Properties, Ctrl+Shift+O) or just point these at the ids the design
+# already has -- whichever is less work when the design changes.
+FIELD_IDS = {
+    'firstname': 'firstname',
+    'lastname': 'lastname',
+    'pronouns': 'pronouns',
+}
+
+# Set True if the design sets names in capitals. The roster is mixed case, so
+# this is a property of the design, not of the data. Capitals are noticeably
+# wider, so turning this on means more names get shrunk.
+UPPERCASE = True
+
+TEMPLATE = './data/2026-button-reference.svg'
 OUT_DIR = './data/print-2026'
 
 # Sheet layout. make_template.py prints these for a given button and paper.
@@ -45,6 +60,11 @@ PAPER = 'letter'
 MARGIN_MM = 10.0
 COLS = 2
 ROWS = 3
+
+# The press's safe zone. When the design has no <field>-box rect, text is fitted
+# to the chord of this circle at the text's own height, so a plain design --
+# just a circle and three named text objects -- works with no extra setup.
+SAFE_DIAMETER_MM = 58.0
 
 # How small a name may go before it is a problem rather than a solution,
 # as a fraction of the size set in the design. Anything that would need to go
@@ -89,6 +109,18 @@ def style_value(el, prop):
     return el.get(prop)
 
 
+def mm_length(value):
+    """A document width/height in mm. A bare number means px, not mm."""
+    if value is None:
+        return 0.0
+    m = re.match(r'^\s*(-?[\d.]+)\s*([a-z%]*)\s*$', str(value))
+    if not m:
+        return 0.0
+    n, unit = float(m.group(1)), m.group(2)
+    return {'': n * MM_PER_PX, 'px': n * MM_PER_PX, 'mm': n, 'cm': n * 10,
+            'in': n * 25.4, 'pt': n * 25.4 / 72}.get(unit, n * MM_PER_PX)
+
+
 def to_units(value):
     """A length from the SVG as user units (the template makes 1 unit = 1mm)."""
     if value is None:
@@ -101,6 +133,24 @@ def to_units(value):
     return {'': n, 'px': n, 'pt': n * 25.4 / 72, 'mm': n, 'cm': n * 10}.get(unit)
 
 
+def template_geometry(path):
+    """{id: (x, y, w, h)} in mm, as rendered.
+
+    Read from Inkscape rather than from the attributes, because a designer's
+    objects usually sit inside a layer with its own transform -- the attribute
+    values are in the layer's coordinate system, not the button's.
+    """
+    geom = {}
+    for line in run([INKSCAPE, '--query-all', path], "reading design geometry").splitlines():
+        f = line.strip().split(',')
+        if len(f) >= 5:
+            try:
+                geom[f[0]] = tuple(float(v) * MM_PER_PX for v in f[1:5])
+            except ValueError:
+                continue
+    return geom
+
+
 def read_template(path):
     """(tree, {field: spec}, doc_w, doc_h) -- the design and its text contract."""
     if not os.path.exists(path):
@@ -108,39 +158,72 @@ def read_template(path):
     tree = ET.parse(path)
     root = tree.getroot()
 
-    doc_w = to_units(root.get('width')) or 0
-    doc_h = to_units(root.get('height')) or 0
+    doc_w = mm_length(root.get('width'))
+    doc_h = mm_length(root.get('height'))
     if not doc_w or not doc_h:
         die(f"{path}: the svg needs width and height (the physical button size)")
 
-    by_id = {el.get('id'): el for el in root.iter() if el.get('id')}
+    # An Inkscape file's user units are whatever its viewBox says, commonly px
+    # rather than mm. Everything below works in mm and converts back on write,
+    # so the design's own unit choice stops mattering.
+    vb = (root.get('viewBox') or '').replace(',', ' ').split()
+    scale = doc_w / float(vb[2]) if len(vb) == 4 and float(vb[2]) else 1.0
+
+    # Object Properties in Inkscape offers both ID and Label, and typing into
+    # Label is the natural thing to do, so honour either.
+    by_id = {}
+    for el in root.iter():
+        for key in (el.get(f'{{{INK_NS}}}label'), el.get('id')):
+            if key and key not in by_id:
+                by_id[key] = el
+    geom = template_geometry(path)
     spec = {}
     for field in FIELDS:
-        text_el = by_id.get(field)
+        oid = FIELD_IDS[field]
+        text_el = by_id.get(oid)
         if text_el is None:
-            die(f"{path}: no text object with id={field!r}\n"
-                f"  in Inkscape: select the text, Object Properties (Ctrl+Shift+O), set ID\n"
-                f"  ids found: {', '.join(sorted(i for i in by_id if i)) or '(none)'}")
+            texts = []
+            for e in root.iter(f'{{{SVG}}}text'):
+                label = e.get(f'{{{INK_NS}}}label')
+                content = (' '.join(''.join(n.itertext()) for n in e).strip()
+                           or (e.text or '').strip())[:24]
+                texts.append(f"{e.get('id') or '?'}"
+                             + (f" (label {label})" if label else '')
+                             + (f" = {content!r}" if content else ''))
+            die(f"{path}: nothing has id or label {oid!r} (for {field})\n"
+                f"  set it in Inkscape: select the text, Object Properties "
+                f"(Ctrl+Shift+O), fill in ID or Label, then SAVE\n"
+                f"  or point FIELD_IDS[{field!r}] at one of these:\n    "
+                + '\n    '.join(texts or ['(no text objects)']))
         size = to_units(style_value(text_el, 'font-size'))
         if not size:
-            die(f"{path}: id={field!r} has no readable font-size")
-        box = by_id.get(f'{field}-box')
-        if box is not None:
-            width = to_units(box.get('width'))
+            die(f"{path}: id={oid!r} has no readable font-size")
+        size *= scale                     # user units -> mm
+        oid = text_el.get('id') or oid    # geometry is keyed by real id
+        if f'{oid}-box' in geom:
+            width = geom[f'{oid}-box'][2]
+        elif oid in geom:
+            # No explicit box. Fit to the safe circle's chord at this text's
+            # own height, measured at whichever edge sits further off centre.
+            gx, gy, gw, gh = geom[oid]
+            r = SAFE_DIAMETER_MM / 2
+            cy = doc_h / 2
+            dy = max(abs(gy - cy), abs(gy + gh - cy))
+            width = 2 * math.sqrt(max(r ** 2 - dy ** 2, 0.0))
+            if width < 1:
+                die(f"{path}: id={oid!r} sits outside the {SAFE_DIAMETER_MM}mm "
+                    f"safe zone; move it in or add a {oid}-box rect")
         else:
-            # No explicit box: fall back to the widest chord of the button at
-            # this text's height, minus a margin. Cruder, but it works.
             width = doc_w * 0.72
         spec[field] = {
+            'id': oid,
             'el': text_el,
             'max_size': size,
             'box_w': width,
-            'box_h': to_units(box.get('height')) if box is not None else None,
+            'box_h': geom[f'{oid}-box'][3] if f'{oid}-box' in geom else None,
             'family': style_value(text_el, 'font-family') or 'sans-serif',
-            'x': to_units(text_el.get('x')) or doc_w / 2,
-            'y': to_units(text_el.get('y')) or doc_h / 2,
         }
-    return tree, spec, doc_w, doc_h
+    return tree, spec, doc_w, doc_h, scale
 
 
 # ---------------------------------------------------------------------------
@@ -265,12 +348,60 @@ def strip_ids(el):
     return el
 
 
-def button_group(tree, spec, layout):
-    """One button as a <g>, with the design's placeholders replaced.
+def set_style_prop(el, prop, value):
+    """Set one property in a style="" attribute, leaving the rest alone."""
+    style = el.get('style', '')
+    if re.search(rf'(?:^|;)\s*{re.escape(prop)}\s*:', style):
+        style = re.sub(rf'((?:^|;)\s*{re.escape(prop)}\s*:)[^;]*', rf'\g<1>{value}', style)
+    else:
+        style = f"{style};{prop}:{value}" if style else f"{prop}:{value}"
+    el.set('style', style)
 
-    Only the three named text objects are swapped out. Any other text in the
-    design -- a year, an event name, decorative lettering -- is the designer's
-    and is copied through untouched.
+
+def set_text(el, lines, size_user):
+    """Replace a placeholder's content and size, in place.
+
+    In place matters: the design nests its text inside groups that carry their
+    own transforms, so a rebuilt element appended elsewhere would land in the
+    wrong coordinate system entirely.
+    """
+    set_style_prop(el, 'font-size', f'{size_user:.4f}px')
+    if el.get('font-size') is not None:
+        el.set('font-size', f'{size_user:.4f}')
+
+    x, y = el.get('x'), el.get('y')
+    for child in el:                       # Inkscape often keeps x/y on the tspan
+        if x is None:
+            x = child.get('x')
+        if y is None:
+            y = child.get('y')
+    lead = size_user * LINE_SPACING
+    y0 = float(y) - lead * (len(lines) - 1) if y is not None else None
+
+    for child in list(el):
+        el.remove(child)
+    el.text = None
+    for i, line in enumerate(lines):
+        ts = ET.SubElement(el, f'{{{SVG}}}tspan')
+        if x is not None:
+            ts.set('x', x)
+        if y0 is not None:
+            ts.set('y', f'{y0 + i * lead:.4f}')
+        ts.text = line
+
+
+def find_by_key(root, key):
+    for el in root.iter():
+        if el.get('id') == key or el.get(f'{{{INK_NS}}}label') == key:
+            return el
+    return None
+
+
+def button_group(tree, spec, layout, scale):
+    """One button as a <g>, with only the named placeholders rewritten.
+
+    Everything else in the design -- artwork, embedded images, curved text,
+    nested transforms -- is copied through exactly as the designer left it.
     """
     root = tree.getroot()
     g = ET.Element(f'{{{SVG}}}g')
@@ -283,48 +414,24 @@ def button_group(tree, spec, layout):
             continue                      # hoisted to the sheet once
         if layer.tag.endswith('namedview'):
             continue
-        if layer.tag == f'{{{SVG}}}text' and layer.get('id') in FIELDS:
-            continue                      # a placeholder at the top level
-        clone = copy.deepcopy(layer)
-        # Drop just the placeholders, before stripping ids makes them
-        # unidentifiable. Everything else in the layer survives.
-        for parent in clone.iter():
-            for child in list(parent):
-                if child.tag == f'{{{SVG}}}text' and child.get('id') in FIELDS:
-                    parent.remove(child)
-        g.append(strip_ids(clone))
+        g.append(copy.deepcopy(layer))
 
-    # The fitted text goes in its own group appended last, so it draws on top
-    # of the artwork whatever order the designer's layers are in.
-    text_layer = ET.SubElement(g, f'{{{SVG}}}g')
     for field in FIELDS:
-        lines, size, _ = layout[field]
-        if not lines:
+        el = find_by_key(g, spec[field]['id'])
+        if el is None:
             continue
-        s = spec[field]
-        # Extra lines stack UPWARD from the design's baseline. Centring the
-        # block instead would push the second line down into whatever the
-        # designer put underneath -- for a first name, the last name.
-        lead = size * LINE_SPACING
-        y0 = s['y'] - lead * (len(lines) - 1)
-        anchor = style_value(s['el'], 'text-anchor') or 'middle'
-        fill = style_value(s['el'], 'fill') or '#000000'
-        weight = style_value(s['el'], 'font-weight')
-        for i, line in enumerate(lines):
-            el = ET.SubElement(text_layer, f'{{{SVG}}}text')
-            el.set('x', f"{s['x']:.4f}")
-            el.set('y', f"{y0 + i * lead:.4f}")
-            el.set('text-anchor', anchor)
-            style = (f"font-family:{s['family']};font-size:{size:.4f}px;"
-                     f"text-anchor:{anchor};fill:{fill}")
-            if weight:
-                style += f";font-weight:{weight}"
-            el.set('style', style)
-            el.text = line
+        lines, size_mm, _ = layout[field]
+        if not lines:
+            for parent in g.iter():       # nothing to print: drop the object
+                if el in list(parent):
+                    parent.remove(el)
+                    break
+            continue
+        set_text(el, lines, size_mm / scale)
     return g
 
 
-def write_sheet(path, groups, tree, doc_w, doc_h):
+def write_sheet(path, groups, tree, doc_w, doc_h, scale):
     """A page of buttons, each translated into its grid cell."""
     pw, ph = PAPER_MM[PAPER]
     per_row = COLS
@@ -341,7 +448,9 @@ def write_sheet(path, groups, tree, doc_w, doc_h):
         col, row = i % per_row, i // per_row
         x = MARGIN_MM + col * (doc_w + gap_x)
         y = MARGIN_MM + row * (doc_h + gap_y)
-        g.set('transform', f'translate({x:.4f},{y:.4f})')
+        # The button's contents are in the design's user units; scale them
+        # into the sheet's millimetres.
+        g.set('transform', f'translate({x:.4f},{y:.4f}) scale({scale:.6f})')
         root.append(g)
     ET.ElementTree(root).write(path, encoding='utf-8', xml_declaration=True)
 
@@ -379,7 +488,7 @@ def main():
     if not os.path.exists(args.csv):
         die(f"CSV not found: {args.csv}\n  run ./nametags.py first")
 
-    tree, spec, doc_w, doc_h = read_template(args.template)
+    tree, spec, doc_w, doc_h, scale = read_template(args.template)
     with open(args.csv, newline='', encoding='utf-8-sig') as f:
         people = list(csv.DictReader(f))
     if not people:
@@ -393,6 +502,8 @@ def main():
     for r in people:
         for field, col in colmap.items():
             text = r[col].strip()
+            if UPPERCASE:
+                text = text.upper()
             wanted[field].add(text)
             words = text.split()
             for i in range(1, len(words)):
@@ -404,7 +515,8 @@ def main():
     for r in people:
         layout, who = {}, f"{r['FirstName']} {r['LastName']}".strip()
         for field, col in colmap.items():
-            lines, size, note = fit(r[col].strip(), field, spec, widths)
+            value = r[col].strip().upper() if UPPERCASE else r[col].strip()
+            lines, size, note = fit(value, field, spec, widths)
             layout[field] = (lines, size, note)
             if note:
                 notes.append((note.startswith('WOULD NOT FIT'), f"{who}: {field} {note}"))
@@ -430,11 +542,12 @@ def main():
     proofs = []
     if touched:
         single = os.path.join(args.out_dir, 'proof-button.svg')
-        write_sheet(single, [button_group(tree, spec, touched[0][1])], tree, doc_w, doc_h)
+        write_sheet(single, [button_group(tree, spec, touched[0][1], scale)],
+                    tree, doc_w, doc_h, scale)
         proofs.append(single)
         sheet = os.path.join(args.out_dir, 'proof-worst.svg')
-        write_sheet(sheet, [button_group(tree, spec, l) for _, l in touched[:COLS * ROWS]],
-                    tree, doc_w, doc_h)
+        write_sheet(sheet, [button_group(tree, spec, l, scale)
+                            for _, l in touched[:COLS * ROWS]], tree, doc_w, doc_h, scale)
         proofs.append(sheet)
     for svg in proofs:
         svg_to_pdf([svg], os.path.splitext(svg)[0] + '.pdf', args.out_dir)
@@ -450,7 +563,8 @@ def main():
     for start in range(0, len(layouts), per):
         chunk = layouts[start:start + per]
         path = os.path.join(args.out_dir, f'sheet-{start // per + 1:02d}.svg')
-        write_sheet(path, [button_group(tree, spec, l) for _, l in chunk], tree, doc_w, doc_h)
+        write_sheet(path, [button_group(tree, spec, l, scale) for _, l in chunk],
+                    tree, doc_w, doc_h, scale)
         sheets.append(path)
 
     out_pdf = os.path.join(args.out_dir, 'buttons-all.pdf')
