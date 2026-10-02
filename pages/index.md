@@ -23,7 +23,7 @@ And here is a map of the main building that we will be using: [Hulbert Main Hous
 
 ### Schedule
 
-Here if the full schedule for this year: [YDW Schedule 2026](/documents/schedule-2026.pdf)
+Here is the full schedule for this year: [YDW Schedule 2026](/documents/schedule-2026.pdf)
 
 ### This Year's Music & Calling
 
