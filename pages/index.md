@@ -10,16 +10,14 @@ homepage: true
 #  text: Enter the Lottery
 #  style: alert
 meta_title: YDW 2026
-teaser: "YDW 2026 will take place <strong>October 2–4, 2026</strong> at the <strong>Hulbert Outdoor Center in Fairlee, VT</strong><br>"
+teaser: "YDW 2026 is taking place <strong>October 2–4, 2026</strong> at the <strong>Hulbert Outdoor Center in Fairlee, VT</strong><br>"
 ---
-
-### This Year's Music & Calling
-
-This weekend will feature **Cojiro** (Jess Newman and Mark Price) playing for contras with calling by **Hannah Chamberlain**, and **Jacob & Audrey** (Jacob Chen and Audrey Jaber) playing for English Country Dancing with calling by **Harris Lapiroff**. We will also have **Kat Dutton** teaching Scottish Country Dance and **Blue Joy** (Steven Bluestein and Abe Joyner-Meyers) playing for the techno contra.
 
 ### Facilities
 
 Here is a map of the facilities: [Hulbert Map](/documents/hulbert-facility-map.pdf)
+
+Full address: **2968 Lake Morey Rd, Fairlee, VT 05045**
 
 And here is a map of the main building that we will be using: [Hulbert Main House](/documents/hulbert-main-house.pdf)
 
@@ -27,7 +25,11 @@ And here is a map of the main building that we will be using: [Hulbert Main Hous
 
 Here if the full schedule for this year: [YDW Schedule 2026](/documents/schedule-2026.pdf)
 
-## About
+### This Year's Music & Calling
+
+This weekend will feature **Cojiro** (Jess Newman and Mark Price) playing for contras with calling by **Hannah Chamberlain**, and **Jacob & Audrey** (Jacob Chen and Audrey Jaber) playing for English Country Dancing with calling by **Harris Lapiroff**. We will also have **Kat Dutton** teaching Scottish Country Dance and **Blue Joy** (Steven Bluestein and Abe Joyner-Meyers) playing for the techno contra.
+
+### About
 
 YDW is an awesome youth-focused traditional dance and music gathering in rural Vermont featuring lots of contra, English, and couples dancing, as well as singing, jamming, and opportunities to get to know cool people from near and far. Our goal is to help and inspire the next generation from across North America to connect with each other and develop skills for participating and leading in all aspects of our vibrant dance community.
 
