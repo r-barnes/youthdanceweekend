@@ -49,3 +49,7 @@ Annie grew up contra dancing in Kentucky and has followed that love all around t
 Molly Tucker is a Boston-based fiddler, educator, and composer. Growing up in California, she spent a great deal of her childhood listening to and playing fiddle tunes and awaiting the next contra dance. She found joy in building folk music community while studying at Oberlin College, where she organized monthly contra dances as well as Dandelion Romp. She now performs regularly with folk duo Casey Murray & Molly Tucker and contra dance band Northwoods, while teaching at two community music schools and running her own private teaching studio. She can be found walking her dog, watching reality TV, or playing tunes.
 
 ![Molly Tucker]({{ site.urlimg }}/ydw/headshot-molly.webp)
+
+### Hazel Edwards (She/Her)
+
+![Hazel Edwards]({{ site.urlimg }}/ydw/headshot-hazel.webp)

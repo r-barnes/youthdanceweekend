@@ -6,6 +6,7 @@ These are the three folders you'll work with:
 
 - **`pages/`** — the site's pages (About, Events, FAQ, etc.). Edit existing ones or add new ones here.
 - **`images/`** — photos and images used across the site.
+    - converting to compressed format: `cwebp -q 80 photo.jpg -o photo.webp`
 - **`documents/`** — PDFs and other downloadable files linked from pages.
 
 To update the site navigation, edit **`navigation.yml`** in this folder. Comments inside that file explain how.
