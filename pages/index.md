@@ -9,25 +9,11 @@ homepage: true
 #  url: link to registration form
 #  text: Enter the Lottery
 #  style: alert
-meta_title: YDW 2026
-teaser: "YDW 2026 is taking place <strong>October 2–4, 2026</strong> at the <strong>Hulbert Outdoor Center in Fairlee, VT</strong><br>"
+meta_title: Youth Dance Weekend
+teaser: "<strong>Youth Dance Weekend will return in 2027</strong><br>"
 ---
 
-### Facilities
-
-Here is a map of the facilities: [Hulbert Map](/documents/hulbert-facility-map.pdf)
-
-Full address: **2968 Lake Morey Rd, Fairlee, VT 05045**
-
-And here is a map of the main building that we will be using: [Hulbert Main House](/documents/hulbert-main-house.pdf)
-
-### Schedule
-
-Here is the full schedule for this year: [YDW Schedule 2026](/documents/schedule-2026.pdf)
-
-### This Year's Music & Calling
-
-This weekend will feature **Cojiro** (Jess Newman and Mark Price) playing for contras with calling by **Hannah Chamberlain**, and **Jacob & Audrey** (Jacob Chen and Audrey Jaber) playing for English Country Dancing with calling by **Harris Lapiroff**. We will also have **Kat Dutton** teaching Scottish Country Dance and **Blue Joy** (Steven Bluestein and Abe Joyner-Meyers) playing for the techno contra.
+Thanks to everyone who joined us for YDW 2026! You can find the 2026 schedule and details on the <a href="{{ '/events/ydw2026/' | relative_url }}">YDW 2026 page</a>.
 
 ### About
 
