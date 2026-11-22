@@ -23,7 +23,9 @@ The weekend is open to anyone 18 or older, and is designed to be affordable and 
 
 To read about the members of the Youth Dance Weekend comittee please see the <a href="{{ '/about/' | relative_url }}">About Page</a>
 
+<div class="mailing-list">
 <script async src="https://eomail5.com/form/62093b68-53eb-11f1-9a7c-77104adec425.js" data-form="62093b68-53eb-11f1-9a7c-77104adec425"></script>
+</div>
 
 
 Questions about YDW? 
