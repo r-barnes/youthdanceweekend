@@ -108,10 +108,27 @@
       max-width: 180px;
       border-radius: 50%;
     }
-    // On phones the logo would stack under the form and add a lot of
-    // scrolling, so leave it out there.
+    // On desktop the logo sits beside the form, vertically centred on it
+    .nurture-container > .align-mid:last-child {
+      align-self: center;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+    // On phones it stacks under the form, centred and a little smaller
     @media (max-width: 640px) {
-      .nurture-container > .align-mid:last-child { display: none !important; }
+      .nurture-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+      }
+      .nurture-container > .align-mid { max-width: none; flex: 0 0 auto; }
+      .nurture-container > .align-mid:last-child { width: 100%; }
+      [eo-block="image"] img {
+        width: 150px !important;
+        max-width: 150px;
+        margin: 0 auto !important;
+      }
     }
 
     .emailoctopus-success-message,
