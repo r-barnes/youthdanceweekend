@@ -1,0 +1,141 @@
+// Restyle the embedded EmailOctopus sign-up form (see pages/index.md)
+// so it matches the site's colours and typography instead of the
+// form builder's white card / purple button defaults.
+
+.mailing-list {
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba($ci-1, 0.25);
+  border-bottom: 1px solid rgba($ci-1, 0.25);
+
+  // Nest under [data-form] so these beat the form's own
+  // [data-form="..."] scoped rules on specificity.
+  [data-form] {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: $font-family-sans-serif !important;
+    color: $text-color !important;
+
+    .nurture-container {
+      display: flex !important;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+    .nurture-container > .align-mid {
+      padding: 0 !important;
+      flex: 1 1 280px;
+      max-width: 480px;
+    }
+    .nurture-container > .align-mid:last-child {
+      flex: 0 0 auto;
+    }
+    .p-3, .pt-5, .pb-5 { padding: 0 !important; }
+
+    // Heading and blurb: match the page's own h3 + paragraph styles
+    [eo-block="title"] h1 span { font-size: inherit !important; }
+    [eo-block="title"] h1 {
+      font-family: $font-family-serif !important;
+      font-size: $font-size-h3 !important;
+      line-height: 1.25 !important;
+      font-weight: normal !important;
+      color: $text-color !important;
+      text-align: left !important;
+      margin: 0 0 0.5rem !important;
+    }
+    [eo-block="text"],
+    [eo-block="text"] * {
+      font-family: $font-family-sans-serif !important;
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+      text-align: left !important;
+      color: $text-color !important;
+    }
+
+    // Inputs
+    input.form-control {
+      font-family: $font-family-sans-serif !important;
+      font-size: 1rem !important;
+      background: rgba(#fff, 0.85) !important;
+      border: 1px solid rgba($ci-1, 0.4) !important;
+      border-radius: 4px !important;
+      box-shadow: none !important;
+      color: $text-color !important;
+      height: auto !important;
+      padding: 0.55rem 0.75rem !important;
+      margin: 0 !important;
+    }
+    input.form-control:focus {
+      border-color: $ci-1 !important;
+      background: #fff !important;
+      outline: 2px solid rgba($ci-1, 0.3);
+    }
+
+    // Subscribe button in the site's primary colour
+    input[type="submit"] {
+      font-family: $font-family-sans-serif !important;
+      font-size: 1rem !important;
+      font-weight: bold !important;
+      letter-spacing: 0.03em;
+      background: $ci-1 !important;
+      border: 0 !important;
+      border-radius: 4px !important;
+      color: #fff !important;
+      padding: 0.65rem 1rem !important;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover,
+    input[type="submit"]:focus {
+      background: darken($ci-1, 8%) !important;
+    }
+
+    // Keep the required "Powered by" credit, just quieter and left-aligned
+    .text-center { text-align: left !important; }
+    [eo-block="powered-by"] { opacity: 0.7; }
+    [eo-block="powered-by"] a { border-bottom: 0 !important; }
+
+    // Logo: drop the fixed width so it sits nicely beside the form
+    [eo-block="image"] { margin: 0 !important; }
+    [eo-block="image"] img {
+      width: 180px !important;
+      max-width: 180px;
+      border-radius: 50%;
+    }
+    // On desktop the logo sits beside the form, vertically centred on it
+    .nurture-container > .align-mid:last-child {
+      align-self: center;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+    // On phones it stacks under the form, centred and a little smaller
+    @media (max-width: 640px) {
+      .nurture-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+      }
+      .nurture-container > .align-mid { max-width: none; flex: 0 0 auto; }
+      .nurture-container > .align-mid:last-child { width: 100%; }
+      [eo-block="image"] img {
+        width: 150px !important;
+        max-width: 150px;
+        margin: 0 auto !important;
+      }
+    }
+
+    .emailoctopus-success-message,
+    .emailoctopus-error-message {
+      font-family: $font-family-sans-serif;
+      text-align: left;
+    }
+
+  }
+}

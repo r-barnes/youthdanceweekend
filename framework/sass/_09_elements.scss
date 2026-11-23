@@ -160,3 +160,21 @@ img.lazy {
     margin-top: -50px;
   }
 }
+
+
+/* Small-screen safety nets
+------------------------------------------------------------------- */
+
+// Long unbroken text (e.g. pasted URLs) wraps instead of widening the page
+p, li, td, th {
+  overflow-wrap: break-word;
+}
+
+// Wide tables scroll sideways inside their own box on phones
+@media (max-width: 640px) {
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
